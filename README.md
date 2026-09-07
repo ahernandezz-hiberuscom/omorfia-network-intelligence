@@ -4,6 +4,7 @@ AI-enabled geospatial decision support for retail network right-sizing.
 Case study submission · Bedashing Beauty Lounge / Omorfia Group.
 
 **Demo video:** https://youtu.be/vR3sH8KYIfw
+
 ## Run it
 
 Python 3.10+.
