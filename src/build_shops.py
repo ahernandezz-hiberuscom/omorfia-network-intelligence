@@ -1,0 +1,132 @@
+"""
+Branch dataset for the three Omorfia Group brands.
+
+Sources, consulted 2026-09-03 (all three store locators are JavaScript-rendered,
+so they were read in a browser):
+  Bedashing        https://bedashingbeauty.com/lounges/          24 lounges
+  Tips & Toes      https://www.tipsandtoes.com/store-locator/    42 rows, 40 in the UAE
+  Jazz Lounge Spa  https://jazzloungespa.com/locations/          10 spas
+
+Coordinates geocoded with Nominatim. `geo_confidence` is high for an exact
+point or a specific mall, medium for the right street or neighbourhood, low for
+a city centroid.
+
+For Bedashing these coordinates are superseded at build_features time by the
+hand-verified ones in verified_locations.py. The raw geocode stays here because
+the delta between the two is part of the evidence.
+"""
+
+import csv, pathlib
+
+OUT = pathlib.Path(__file__).resolve().parents[1] / "data"
+OUT.mkdir(parents=True, exist_ok=True)
+
+# brand, branch_name, address, emirate, lat, lon, geo_confidence, segment, format
+ROWS = [
+    # ---------------- BEDASHING (women) ----------------
+    ("Bedashing","Al Ain","Villa 14, Hamdan Bin Mohammad St., Al Markaniyah, Al Ain","Abu Dhabi",24.24289,55.70805,"medium","women","salon"),
+    ("Bedashing","Al Barsha","Shop 1,2-3 Umm Suqeim St, Al Barsha 2","Dubai",25.10238,55.21607,"medium","women","salon"),
+    ("Bedashing","Al Dhafra","Al Dhafra Walk, Liwa-Tarif Rd, Zayed City","Abu Dhabi",23.65204,53.70466,"low","women","salon"),
+    ("Bedashing","Al Falah","Al Falah Village 4, 1D Branch","Abu Dhabi",24.43711,54.71182,"medium","women","salon"),
+    ("Bedashing","Al Jada","Shop M-18, Misk 2, Muwaileh Trading","Sharjah",25.31403,55.47620,"high","women","salon"),
+    ("Bedashing","Al Maqta","Opposite Fairmont Bab Al Bahr, Villa 31, Al Khor St","Abu Dhabi",24.40197,54.49519,"medium","women","salon"),
+    ("Bedashing","Al Taif Mall","G/F 13, Al Taif Mall","Fujairah",25.41474,56.23137,"low","women","salon"),
+    ("Bedashing","Baniyas","Villa D, Baniyas East 8, opposite Lulu Hypermarket","Abu Dhabi",24.30648,54.63486,"medium","women","salon"),
+    ("Bedashing","City Walk","18A-06 Al Raha Street, City Walk","Dubai",25.20816,55.26187,"high","women","salon"),
+    ("Bedashing","Delma","Shop 1 & 2 Kim Tower, Delma St, Al Nahyan","Abu Dhabi",24.46446,54.38684,"medium","women","salon"),
+    ("Bedashing","Jumeirah Park","Shop 17 & 18, Jumeirah Park Club House","Dubai",25.04694,55.15482,"high","women","salon"),
+    ("Bedashing","Khaleej Al Arabi","Opposite Al Bateen Gardens, Khaleej Al Arabi St","Abu Dhabi",24.45138,54.33797,"medium","women","salon"),
+    ("Bedashing","Khalifa City A","Villa 1, Casablanca Residence, Khalifa City A","Abu Dhabi",24.42013,54.57495,"medium","women","salon"),
+    ("Bedashing","Ministries Complex","Shop 3, ICT Building, Khalifa Park","Abu Dhabi",24.43121,54.45727,"medium","women","salon"),
+    ("Bedashing","Mirdif 35","Khansaheb Mirdif 35, Level 2, Unit L2-10","Dubai",25.22184,55.42315,"medium","women","salon"),
+    ("Bedashing","Mohammed Bin Zayed City","Villa 5, 69 Al Raqi St","Abu Dhabi",24.33396,54.55356,"medium","women","salon"),
+    ("Bedashing","Nad Al Sheba","Nad Al Sheba Mall, Shop L2-048","Dubai",25.15970,55.37014,"high","women","salon"),
+    ("Bedashing","Noya Plaza","Noya Plaza, East Yas, G22, Yas Island","Abu Dhabi",24.48640,54.60907,"medium","women","salon"),
+    ("Bedashing","Ras Al Khaimah","Villa 3, Sheikh Rashid Bin Saeed Al Maktoum Rd, Al Dhaith","Ras Al Khaimah",25.72445,55.92693,"medium","women","salon"),
+    ("Bedashing","Shahama","Al Shahama Rd","Abu Dhabi",24.55224,54.68099,"medium","women","salon"),
+    ("Bedashing","Shakhbout City","Shakhbout City 3","Abu Dhabi",24.35950,54.63233,"medium","women","salon"),
+    ("Bedashing","West Yas","Westyas Plaza, Yas Island","Abu Dhabi",24.49428,54.58313,"high","women","salon"),
+    ("Bedashing","Zawaya Walk","Shop 32 & 33, Zawaya Walk, University City Rd, Al Shahba","Sharjah",25.34363,55.40519,"medium","women","salon"),
+    ("Bedashing","Zayed International Airport","Midfield Terminal","Abu Dhabi",24.44093,54.63773,"high","women","salon"),
+
+    # ---------------- TIPS & TOES (women) ----------------
+    ("Tips & Toes","Al Barsha","Umm Suqeim Rd, Al Barsha","Dubai",25.10238,55.21607,"medium","women","mid_salon"),
+    ("Tips & Toes","Al Dhannah Mall","Al Dhannah Mall, Al Ruwais","Abu Dhabi",24.07550,52.67199,"high","women","mid_salon"),
+    ("Tips & Toes","Al Falah 1","Block A Al Manarah St, Al Falah","Abu Dhabi",24.43711,54.71182,"medium","women","mid_salon"),
+    ("Tips & Toes","Al Falah 5","Al Falah Drive St, Village Center 5","Abu Dhabi",24.43711,54.71182,"low","women","mid_salon"),
+    ("Tips & Toes","Al Furjan Pavilion","Pavilion, Jebel Ali Village, Al Furjan","Dubai",25.03047,55.15223,"medium","women","mid_salon"),
+    ("Tips & Toes","Al Furjan West","Al Furjan Pavilion West","Dubai",25.03047,55.15223,"low","women","mid_salon"),
+    ("Tips & Toes","Al Hamra Mall","Sheikh Mohammed Bin Salem Rd, Al Hamra Village","Ras Al Khaimah",25.68300,55.78169,"high","women","mid_salon"),
+    ("Tips & Toes","Al Shamkhah Villa","367 Sector, Al Ayid St, Al Shamkhah","Abu Dhabi",24.37831,54.70437,"medium","women","mid_salon"),
+    ("Tips & Toes","Arabian Ranches","E311, Arabian Ranches","Dubai",25.05357,55.27548,"medium","women","mid_salon"),
+    ("Tips & Toes","Arjan","Al Faris Building, Arjan, Al Barsha South","Dubai",25.06033,55.23549,"medium","women","mid_salon"),
+    ("Tips & Toes","Business Bay","Garden Side Bay Avenue, Business Bay","Dubai",25.19008,55.26719,"high","women","mid_salon"),
+    ("Tips & Toes","City Centre Mirdif","City Centre Mirdif","Dubai",25.21602,55.40807,"high","women","mid_salon"),
+    ("Tips & Toes","Creek Beach","Retail 10, Summer at Creek Beach Building 1","Dubai",25.19798,55.36038,"medium","women","mid_salon"),
+    ("Tips & Toes","Dubai Festival City","GF Dubai Festival City Mall","Dubai",25.22187,55.35259,"high","women","mid_salon"),
+    ("Tips & Toes","Dubai Marina Mall","Dubai Marina Mall Galleria","Dubai",25.07664,55.14022,"high","women","mid_salon"),
+    ("Tips & Toes","Dubai Silicon Central","Dubai Silicon Central","Dubai",25.11122,55.37478,"high","women","mid_salon"),
+    ("Tips & Toes","Golden Mile 2","Building 7 Ground Floor, Golden Mile, Palm Jumeirah","Dubai",25.11733,55.13510,"low","women","mid_salon"),
+    ("Tips & Toes","Hili Mall","Baniyas St, Hili","Abu Dhabi",24.27414,55.77883,"high","women","mid_salon"),
+    ("Tips & Toes","Jimi District","Al Mahir St, Al Jimi","Abu Dhabi",24.25096,55.73553,"medium","women","mid_salon"),
+    ("Tips & Toes","Khaleej Al Arabi","Villa 816, Al Khaleej Al Arabi St, Al Bateen","Abu Dhabi",24.45138,54.33797,"medium","women","mid_salon"),
+    ("Tips & Toes","Khalifa City","Street 12, Southwest 11, Khalifa City A","Abu Dhabi",24.42013,54.57495,"medium","women","mid_salon"),
+    ("Tips & Toes","Makani","Makani Zakher Shopping Center, Nimah","Abu Dhabi",24.13501,55.68543,"medium","women","mid_salon"),
+    ("Tips & Toes","Marina Mall AUH","W Corniche Rd, Al Kasir, Al Marina","Abu Dhabi",24.47604,54.32143,"high","women","mid_salon"),
+    ("Tips & Toes","Marina Vista","Unit R01, Marina Vista Tower 2, Emaar Beachfront","Dubai",25.09680,55.13985,"medium","women","mid_salon"),
+    ("Tips & Toes","Me'aisem City Centre","City Centre Meaisem, Dubai Production City","Dubai",25.04034,55.19694,"high","women","mid_salon"),
+    ("Tips & Toes","Meadows Mall","Meadows 4, Emirates Hills","Dubai",25.06714,55.15679,"medium","women","mid_salon"),
+    ("Tips & Toes","Mira Town Centre","Mira Town Centre","Dubai",25.00949,55.30579,"medium","women","mid_salon"),
+    ("Tips & Toes","Mohammed Bin Zayed City","Villa 143, Mohamed Bin Zayed City Z6","Abu Dhabi",24.33396,54.55356,"medium","women","mid_salon"),
+    ("Tips & Toes","Nation Towers","Nation Towers, 1st Street Al Bateen","Abu Dhabi",24.46446,54.32700,"high","women","mid_salon"),
+    ("Tips & Toes","Park Point","Dubai Hills Estate, Park Point","Dubai",25.12140,55.26434,"medium","women","mid_salon"),
+    ("Tips & Toes","Port De La Mer","La Cote B2, Port De La Mer, Jumeirah 1","Dubai",25.23833,55.25279,"high","women","mid_salon"),
+    ("Tips & Toes","Reem Mall","Spinneys entrance, Basement level 1, Reem Mall","Abu Dhabi",24.48842,54.40058,"high","women","mid_salon"),
+    ("Tips & Toes","Saadiyat Island","Saadiyat Island","Abu Dhabi",24.54597,54.44369,"low","women","mid_salon"),
+    ("Tips & Toes","Shamkha Mall","Makani Mall, Al Shamkhah","Abu Dhabi",24.38691,54.72260,"high","women","mid_salon"),
+    ("Tips & Toes","The Dubai Mall","The Dubai Mall Level 1, Fashion Avenue","Dubai",25.19704,55.27895,"high","women","mid_salon"),
+    ("Tips & Toes","The Greens Souk","Community Centre Shop 8, Street 7, The Greens","Dubai",25.09286,55.17062,"medium","women","mid_salon"),
+    ("Tips & Toes","The Springs Souk","Springs Souq","Dubai",25.06614,55.19213,"high","women","mid_salon"),
+    ("Tips & Toes","The Valley","Emaar Valley Pavilion Mall","Dubai",25.01147,55.44707,"medium","women","mid_salon"),
+    ("Tips & Toes","The Villa","Next to Spinneys, The Villa","Dubai",25.00949,55.30579,"low","women","mid_salon"),
+    ("Tips & Toes","Yas Mall","Yas Mall, Lower ground floor, Yas Island","Abu Dhabi",24.48601,54.60767,"high","women","mid_salon"),
+
+    # ---------------- JAZZ LOUNGE SPA (men) ----------------
+    ("Jazz Lounge Spa","Palm Jumeirah","Palm Jumeirah","Dubai",25.11733,55.13510,"medium","men","mens_spa"),
+    ("Jazz Lounge Spa","Port De La Mer","Port De La Mer","Dubai",25.23833,55.25279,"high","men","mens_spa"),
+    ("Jazz Lounge Spa","Al Barsha","Al Barsha","Dubai",25.09949,55.20173,"medium","men","mens_spa"),
+    ("Jazz Lounge Spa","Mirdif","Mirdif","Dubai",25.22184,55.42315,"medium","men","mens_spa"),
+    ("Jazz Lounge Spa","Yas Mall","Yas Mall, Yas Island","Abu Dhabi",24.48601,54.60767,"high","men","mens_spa"),
+    ("Jazz Lounge Spa","Nation Towers","Nation Towers","Abu Dhabi",24.46446,54.32700,"high","men","mens_spa"),
+    ("Jazz Lounge Spa","Al Falah","Al Falah","Abu Dhabi",24.43711,54.71182,"medium","men","mens_spa"),
+    ("Jazz Lounge Spa","Al Reem Mall","Reem Mall","Abu Dhabi",24.48842,54.40058,"high","men","mens_spa"),
+    ("Jazz Lounge Spa","Hili","Four Points by Sheraton, Hili, Al Ain","Abu Dhabi",24.27414,55.77883,"low","men","mens_spa"),
+    ("Jazz Lounge Spa","Al Bateen","Al Bateen","Abu Dhabi",24.45138,54.33797,"medium","men","mens_spa"),
+]
+
+HEADER = ["shop_id","brand","branch_name","address","emirate","lat","lon",
+          "geo_confidence","segment","format"]
+
+
+def slug(brand, name):
+    b = {"Bedashing": "bd", "Tips & Toes": "tt", "Jazz Lounge Spa": "jz"}[brand]
+    s = "".join(c.lower() if c.isalnum() else "_" for c in name)
+    while "__" in s:
+        s = s.replace("__", "_")
+    return f"{b}_{s.strip('_')}"
+
+
+def main():
+    with open(OUT / "group_shops.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(HEADER)
+        for r in ROWS:
+            w.writerow([slug(r[0], r[1])] + list(r))
+    print(f"group_shops.csv -> {len(ROWS)} rows")
+    for b in ("Bedashing", "Tips & Toes", "Jazz Lounge Spa"):
+        print(f"  {b}: {sum(1 for r in ROWS if r[0] == b)}")
+    print("  low confidence:", sum(1 for r in ROWS if r[6] == "low"))
+
+
+if __name__ == "__main__":
+    main()
