@@ -1,0 +1,111 @@
+shop_id,other_id,other_brand,distance_km,overlap_frac,overlap_km2,same_segment,geocode_artifact
+bd_al_barsha,tt_al_barsha,Tips & Toes,1.198,0.5713,4.467,True,False
+bd_al_barsha,jz_al_barsha,Jazz Lounge Spa,2.064,0.4864,3.803,False,False
+bd_al_falah,tt_al_falah_1,Tips & Toes,2.894,0.1219,1.025,True,False
+bd_al_falah,tt_al_falah_5,Tips & Toes,2.894,0.1219,1.025,True,False
+bd_al_falah,jz_al_falah,Jazz Lounge Spa,2.894,0.1604,1.349,False,False
+bd_city_walk,tt_business_bay,Tips & Toes,1.367,0.0715,0.551,True,False
+bd_city_walk,tt_the_dubai_mall,Tips & Toes,1.619,0.1615,1.245,True,False
+bd_delma,bd_khaleej_al_arabi,Bedashing,3.296,0.2469,6.22,True,False
+bd_delma,tt_khaleej_al_arabi,Tips & Toes,5.084,0.1015,2.556,True,False
+bd_delma,tt_nation_towers,Tips & Toes,5.861,0.0093,0.234,True,False
+bd_delma,tt_reem_mall,Tips & Toes,2.781,0.1027,2.586,True,False
+bd_delma,jz_al_reem_mall,Jazz Lounge Spa,2.781,0.2145,5.403,False,False
+bd_delma,jz_al_bateen,Jazz Lounge Spa,5.084,0.0097,0.244,False,False
+bd_khaleej_al_arabi,bd_delma,Bedashing,3.296,0.2817,6.22,True,False
+bd_khaleej_al_arabi,tt_khaleej_al_arabi,Tips & Toes,1.804,0.5149,11.369,True,False
+bd_khaleej_al_arabi,tt_marina_mall_auh,Tips & Toes,3.79,0.0447,0.986,True,False
+bd_khaleej_al_arabi,tt_nation_towers,Tips & Toes,2.78,0.4341,9.585,True,False
+bd_khaleej_al_arabi,jz_nation_towers,Jazz Lounge Spa,2.78,0.1953,4.312,False,False
+bd_khaleej_al_arabi,jz_al_bateen,Jazz Lounge Spa,1.804,0.3204,7.075,False,False
+bd_khalifa_city_a,bd_zayed_international_airport,Bedashing,4.506,0.0143,0.209,True,False
+bd_mirdif_35,tt_city_centre_mirdif,Tips & Toes,3.09,0.1921,0.644,True,False
+bd_mirdif_35,jz_mirdif,Jazz Lounge Spa,1.525,0.9799,3.286,False,False
+bd_noya_plaza,tt_yas_mall,Tips & Toes,2.346,0.0295,0.056,True,False
+bd_noya_plaza,jz_yas_mall,Jazz Lounge Spa,2.346,0.5905,1.126,False,False
+bd_west_yas,tt_yas_mall,Tips & Toes,2.266,0.1077,1.107,True,False
+bd_west_yas,jz_yas_mall,Jazz Lounge Spa,2.266,0.2191,2.252,False,False
+bd_zayed_international_airport,bd_khalifa_city_a,Bedashing,4.506,0.0517,0.209,True,False
+tt_al_barsha,bd_al_barsha,Bedashing,1.198,0.661,4.467,True,False
+tt_al_barsha,jz_al_barsha,Jazz Lounge Spa,1.479,0.627,4.237,False,False
+tt_al_falah_1,bd_al_falah,Bedashing,2.894,0.1637,1.025,True,False
+tt_al_falah_1,tt_al_falah_5,Tips & Toes,0.0,1.0,6.26,True,True
+tt_al_falah_1,jz_al_falah,Jazz Lounge Spa,0.0,0.9009,5.64,False,True
+tt_al_falah_5,bd_al_falah,Bedashing,2.894,0.1637,1.025,True,False
+tt_al_falah_5,tt_al_falah_1,Tips & Toes,0.0,1.0,6.26,True,True
+tt_al_falah_5,jz_al_falah,Jazz Lounge Spa,0.0,0.9009,5.64,False,True
+tt_al_furjan_pavilion,tt_al_furjan_west,Tips & Toes,0.0,1.0,9.635,True,True
+tt_al_furjan_west,tt_al_furjan_pavilion,Tips & Toes,0.0,1.0,9.635,True,True
+tt_al_shamkhah_villa,tt_shamkha_mall,Tips & Toes,2.079,0.2153,1.761,True,False
+tt_business_bay,bd_city_walk,Bedashing,1.367,0.146,0.551,True,False
+tt_business_bay,tt_the_dubai_mall,Tips & Toes,1.414,0.2859,1.079,True,False
+tt_city_centre_mirdif,bd_mirdif_35,Bedashing,3.09,0.103,0.644,True,False
+tt_city_centre_mirdif,jz_mirdif,Jazz Lounge Spa,1.649,0.8528,5.336,False,False
+tt_dubai_marina_mall,tt_marina_vista,Tips & Toes,2.242,0.1461,1.791,True,False
+tt_dubai_marina_mall,tt_meadows_mall,Tips & Toes,1.975,0.0839,1.028,True,False
+tt_golden_mile_2,jz_palm_jumeirah,Jazz Lounge Spa,0.0,0.7472,7.375,False,True
+tt_hili_mall,jz_hili,Jazz Lounge Spa,0.0,0.814,5.932,False,True
+tt_khaleej_al_arabi,bd_delma,Bedashing,5.084,0.1822,2.556,True,False
+tt_khaleej_al_arabi,bd_khaleej_al_arabi,Bedashing,1.804,0.8105,11.369,True,False
+tt_khaleej_al_arabi,tt_marina_mall_auh,Tips & Toes,3.213,0.0507,0.711,True,False
+tt_khaleej_al_arabi,tt_nation_towers,Tips & Toes,1.83,0.5102,7.156,True,False
+tt_khaleej_al_arabi,jz_nation_towers,Jazz Lounge Spa,1.83,0.368,5.162,False,False
+tt_khaleej_al_arabi,jz_al_bateen,Jazz Lounge Spa,0.0,0.6213,8.715,False,True
+tt_marina_mall_auh,bd_khaleej_al_arabi,Bedashing,3.79,0.0602,0.986,True,False
+tt_marina_mall_auh,tt_khaleej_al_arabi,Tips & Toes,3.213,0.0434,0.711,True,False
+tt_marina_mall_auh,tt_nation_towers,Tips & Toes,1.406,0.2366,3.875,True,False
+tt_marina_mall_auh,jz_nation_towers,Jazz Lounge Spa,1.406,0.3169,5.191,False,False
+tt_marina_mall_auh,jz_al_bateen,Jazz Lounge Spa,3.213,0.0672,1.101,False,False
+tt_marina_vista,tt_dubai_marina_mall,Tips & Toes,2.242,0.6054,1.791,True,False
+tt_marina_vista,jz_palm_jumeirah,Jazz Lounge Spa,2.332,0.063,0.186,False,False
+tt_meadows_mall,tt_dubai_marina_mall,Tips & Toes,1.975,0.4274,1.028,True,False
+tt_mira_town_centre,tt_the_villa,Tips & Toes,0.0,1.0,1.992,True,True
+tt_nation_towers,bd_delma,Bedashing,5.861,0.0154,0.234,True,False
+tt_nation_towers,bd_khaleej_al_arabi,Bedashing,2.78,0.6297,9.585,True,False
+tt_nation_towers,tt_khaleej_al_arabi,Tips & Toes,1.83,0.4702,7.156,True,False
+tt_nation_towers,tt_marina_mall_auh,Tips & Toes,1.406,0.2546,3.875,True,False
+tt_nation_towers,jz_nation_towers,Jazz Lounge Spa,0.0,0.5875,8.942,False,False
+tt_nation_towers,jz_al_bateen,Jazz Lounge Spa,1.83,0.439,6.682,False,False
+tt_port_de_la_mer,jz_port_de_la_mer,Jazz Lounge Spa,0.0,0.7609,5.942,False,False
+tt_reem_mall,bd_delma,Bedashing,2.781,0.337,2.586,True,False
+tt_reem_mall,jz_al_reem_mall,Jazz Lounge Spa,0.0,0.9025,6.926,False,False
+tt_shamkha_mall,tt_al_shamkhah_villa,Tips & Toes,2.079,0.2443,1.761,True,False
+tt_the_dubai_mall,bd_city_walk,Bedashing,1.619,0.2374,1.245,True,False
+tt_the_dubai_mall,tt_business_bay,Tips & Toes,1.414,0.2058,1.079,True,False
+tt_the_greens_souk,tt_the_springs_souk,Tips & Toes,3.677,0.0223,0.116,True,False
+tt_the_greens_souk,jz_al_barsha,Jazz Lounge Spa,3.218,0.0614,0.318,False,False
+tt_the_springs_souk,tt_the_greens_souk,Tips & Toes,3.677,0.0218,0.116,True,False
+tt_the_springs_souk,jz_al_barsha,Jazz Lounge Spa,3.832,0.1276,0.678,False,False
+tt_the_villa,tt_mira_town_centre,Tips & Toes,0.0,1.0,1.992,True,True
+tt_yas_mall,bd_noya_plaza,Bedashing,2.346,0.013,0.056,True,False
+tt_yas_mall,bd_west_yas,Bedashing,2.266,0.2555,1.107,True,False
+tt_yas_mall,jz_yas_mall,Jazz Lounge Spa,0.0,0.9927,4.301,False,False
+jz_palm_jumeirah,tt_golden_mile_2,Tips & Toes,0.0,0.6012,7.375,False,True
+jz_palm_jumeirah,tt_marina_vista,Tips & Toes,2.332,0.0152,0.186,False,False
+jz_port_de_la_mer,tt_port_de_la_mer,Tips & Toes,0.0,0.4839,5.942,False,False
+jz_al_barsha,bd_al_barsha,Bedashing,2.064,0.31,3.803,False,False
+jz_al_barsha,tt_al_barsha,Tips & Toes,1.479,0.3454,4.237,False,False
+jz_al_barsha,tt_the_greens_souk,Tips & Toes,3.218,0.026,0.318,False,False
+jz_al_barsha,tt_the_springs_souk,Tips & Toes,3.832,0.0552,0.678,False,False
+jz_mirdif,bd_mirdif_35,Bedashing,1.525,0.2677,3.286,False,False
+jz_mirdif,tt_city_centre_mirdif,Tips & Toes,1.649,0.4346,5.336,False,False
+jz_yas_mall,bd_noya_plaza,Bedashing,2.346,0.0923,1.126,False,False
+jz_yas_mall,bd_west_yas,Bedashing,2.266,0.1845,2.252,False,False
+jz_yas_mall,tt_yas_mall,Tips & Toes,0.0,0.3524,4.301,False,False
+jz_nation_towers,bd_khaleej_al_arabi,Bedashing,2.78,0.3534,4.312,False,False
+jz_nation_towers,tt_khaleej_al_arabi,Tips & Toes,1.83,0.423,5.162,False,False
+jz_nation_towers,tt_marina_mall_auh,Tips & Toes,1.406,0.4253,5.191,False,False
+jz_nation_towers,tt_nation_towers,Tips & Toes,0.0,0.7328,8.942,False,False
+jz_nation_towers,jz_al_bateen,Jazz Lounge Spa,1.83,0.4337,5.293,True,False
+jz_al_falah,bd_al_falah,Bedashing,2.894,0.1105,1.349,False,False
+jz_al_falah,tt_al_falah_1,Tips & Toes,0.0,0.4623,5.64,False,True
+jz_al_falah,tt_al_falah_5,Tips & Toes,0.0,0.4623,5.64,False,True
+jz_al_reem_mall,bd_delma,Bedashing,2.781,0.4427,5.403,False,False
+jz_al_reem_mall,tt_reem_mall,Tips & Toes,0.0,0.5675,6.926,False,False
+jz_hili,tt_hili_mall,Tips & Toes,0.0,0.4869,5.932,False,True
+jz_al_bateen,bd_delma,Bedashing,5.084,0.02,0.244,False,False
+jz_al_bateen,bd_khaleej_al_arabi,Bedashing,1.804,0.5798,7.075,False,False
+jz_al_bateen,tt_khaleej_al_arabi,Tips & Toes,0.0,0.7142,8.715,False,True
+jz_al_bateen,tt_marina_mall_auh,Tips & Toes,3.213,0.0902,1.101,False,False
+jz_al_bateen,tt_nation_towers,Tips & Toes,1.83,0.5476,6.682,False,False
+jz_al_bateen,jz_nation_towers,Jazz Lounge Spa,1.83,0.4338,5.293,True,False

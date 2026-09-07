@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e71e143d99ee4c024473277eb87aaca0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:22px;left:22px;z-index:9999;
+                background:rgba(255,255,255,.96);border:1px solid #d5d5d5;
+                border-radius:4px;padding:12px 15px;
+                font:12.5px/1.55 system-ui,sans-serif;max-width:300px;
+                box-shadow:0 2px 10px rgba(0,0,0,.12)">
+      <div style="font-weight:700;margin-bottom:7px">Network decision &middot; women&rsquo;s segment</div>
+      <div style="color:#1C7C54">● PROTECT — invest and defend</div>
+      <div style="color:#B3860F">● HOLD — renew and revisit</div>
+      <div style="color:#9E2B2B">● SHRINK — reduce or do not renew</div>
+      <hr style="border:0;border-top:1px solid #e5e5e5;margin:8px 0">
+      <div><b>Size</b> = review volume</div>
+      <div><b>Dashed outline</b> = fragile recommendation,
+           it flips if you move the weights</div>
+      <hr style="border:0;border-top:1px solid #e5e5e5;margin:8px 0">
+      <div style="color:#777;font-size:11.5px">
+        53 branches scored (24 Bedashing).<br>
+        Jazz Lounge Spa excluded: men&rsquo;s segment.<br>
+        Click a dot to see why.</div>
+    </div>
+    
+            <div class="folium-map" id="map_e71e143d99ee4c024473277eb87aaca0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e71e143d99ee4c024473277eb87aaca0 = L.map(
+                "map_e71e143d99ee4c024473277eb87aaca0",
+                {
+                    center: [24.9, 55.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_e71e143d99ee4c024473277eb87aaca0);
+
+            
+
+        
+    
+            var tile_layer_3f292920df75c38f529d3be57515fb87 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3f292920df75c38f529d3be57515fb87.addTo(map_e71e143d99ee4c024473277eb87aaca0);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_e71e143d99ee4c024473277eb87aaca0);
+        
+    
+            var feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_4b104009b287a451985cf1f4fc964972 = L.circleMarker(
+                [25.2019849, 55.2638147],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.248931448269655, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_407a12f38198cf63f0aa81700b943424 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_b3af931303d8ba960ae3592a74886e0e = $(`<div id="html_b3af931303d8ba960ae3592a74886e0e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">City Walk</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Dubai</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 85 (4.6 from 855 reviews); attractive market (demand p94, pressure p88). Customers mostly talk about services (98), manicure (39), technician (13).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>62.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>85</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>94</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>16%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (855 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_407a12f38198cf63f0aa81700b943424.setContent(html_b3af931303d8ba960ae3592a74886e0e);
+            
+        
+
+        circle_marker_4b104009b287a451985cf1f4fc964972.bindPopup(popup_407a12f38198cf63f0aa81700b943424)
+        ;
+
+        
+    
+    
+            circle_marker_4b104009b287a451985cf1f4fc964972.bindTooltip(
+                `<div>
+                     Bedashing · City Walk — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12537ea5dd8d8e4e8ef3dce15a6c434d = L.circleMarker(
+                [24.432147, 54.4647516],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.871389197818743, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_deb0703f4d4cf0e44be723b3d8ea35f7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ee81ed99686f9e0411d0c7f4fe7de1ed = $(`<div id="html_ee81ed99686f9e0411d0c7f4fe7de1ed" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Ministries Complex</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 98 (4.9 from 1214 reviews). Customers mostly talk about technician (61), treatment (15), blow dry (14).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>61.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>98</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>64</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.9 (1214 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_deb0703f4d4cf0e44be723b3d8ea35f7.setContent(html_ee81ed99686f9e0411d0c7f4fe7de1ed);
+            
+        
+
+        circle_marker_12537ea5dd8d8e4e8ef3dce15a6c434d.bindPopup(popup_deb0703f4d4cf0e44be723b3d8ea35f7)
+        ;
+
+        
+    
+    
+            circle_marker_12537ea5dd8d8e4e8ef3dce15a6c434d.bindTooltip(
+                `<div>
+                     Bedashing · Ministries Complex — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9faab1f65376da156dd431dc238b07b7 = L.circleMarker(
+                [24.4130516, 54.4929556],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.987635209983637, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_1e4e975efcd2f47adecdfb89a2da83ee = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_aa9dcdb381a65dc8612be3c271e84b5a = $(`<div id="html_aa9dcdb381a65dc8612be3c271e84b5a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Maqta</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 92 (4.6 from 1288 reviews). Customers mostly talk about technician (79), bid (41), hammam (22). Operational signals worth a look: front-desk experience, booking or welcome (9 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>59.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>92</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>65</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (1288 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_1e4e975efcd2f47adecdfb89a2da83ee.setContent(html_aa9dcdb381a65dc8612be3c271e84b5a);
+            
+        
+
+        circle_marker_9faab1f65376da156dd431dc238b07b7.bindPopup(popup_1e4e975efcd2f47adecdfb89a2da83ee)
+        ;
+
+        
+    
+    
+            circle_marker_9faab1f65376da156dd431dc238b07b7.bindTooltip(
+                `<div>
+                     Bedashing · Al Maqta — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_655f390301117aca49cae143893ae9d8 = L.circleMarker(
+                [25.3306234, 55.4294728],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.723922371584726, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_8a07a6b4b7980344f8185fcf1ecf606e = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_93de4cc137cd9343f6326e691424682e = $(`<div id="html_93de4cc137cd9343f6326e691424682e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Zawaya Walk</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Sharjah</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p73, pressure p61). Customers mostly talk about services (46), pedicure (22), products (12).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>57.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>67</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>86</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.7 (601 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_8a07a6b4b7980344f8185fcf1ecf606e.setContent(html_93de4cc137cd9343f6326e691424682e);
+            
+        
+
+        circle_marker_655f390301117aca49cae143893ae9d8.bindPopup(popup_8a07a6b4b7980344f8185fcf1ecf606e)
+        ;
+
+        
+    
+    
+            circle_marker_655f390301117aca49cae143893ae9d8.bindTooltip(
+                `<div>
+                     Bedashing · Zawaya Walk — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed77f9751f88c909cc216eeba95cfd04 = L.circleMarker(
+                [24.33396, 54.55356],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.27165152540788, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_0ad9136ee56424018fea7e3788f288b6 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_f3c6d2c545009d1610d8474d4169c825 = $(`<div id="html_f3c6d2c545009d1610d8474d4169c825" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Mohammed Bin Zayed City</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p71, pressure p61).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>53.0</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>64</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>79</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (867 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_0ad9136ee56424018fea7e3788f288b6.setContent(html_f3c6d2c545009d1610d8474d4169c825);
+            
+        
+
+        circle_marker_ed77f9751f88c909cc216eeba95cfd04.bindPopup(popup_0ad9136ee56424018fea7e3788f288b6)
+        ;
+
+        
+    
+    
+            circle_marker_ed77f9751f88c909cc216eeba95cfd04.bindTooltip(
+                `<div>
+                     Tips & Toes · Mohammed Bin Zayed City — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66b7c5bec713c415ceeec2d9517a76d5 = L.circleMarker(
+                [24.4588702, 54.3537762],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.630814663149934, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_d4d7a79dcb33ae111fde3327edeedc61 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_63978f5d371128738800ef2eb0801c5c = $(`<div id="html_63978f5d371128738800ef2eb0801c5c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Khaleej Al Arabi</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because it shares 52% of its catchment with Tips & Toes Khaleej Al Arabi 1.8 km away; health at percentile 96 (4.6 from 1737 reviews); attractive market (demand p92, pressure p98). Customers mostly talk about technician (86), receptionist (32), hair colour (19). Operational signals worth a look: front-desk experience, booking or welcome (32 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>52.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>96</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>77</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>52%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (1737 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   99% · robust</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>beats Tips & Toes Khaleej Al Arabi</td></tr>           </table>         </div></div>`)[0];
+                popup_d4d7a79dcb33ae111fde3327edeedc61.setContent(html_63978f5d371128738800ef2eb0801c5c);
+            
+        
+
+        circle_marker_66b7c5bec713c415ceeec2d9517a76d5.bindPopup(popup_d4d7a79dcb33ae111fde3327edeedc61)
+        ;
+
+        
+    
+    
+            circle_marker_66b7c5bec713c415ceeec2d9517a76d5.bindTooltip(
+                `<div>
+                     Bedashing · Khaleej Al Arabi — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4362d981dac4c902fee06b10145596ca = L.circleMarker(
+                [24.467954, 54.3847796],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.878185299330804, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_3037b241a99ad3f4fef053bcb7e1a6d9 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_747fea2863c15745acb86e87e6b2e9a6 = $(`<div id="html_747fea2863c15745acb86e87e6b2e9a6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Delma</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p100, pressure p100). Customers mostly talk about services (75), manicure (30), technician (24). Operational signals worth a look: front-desk experience, booking or welcome (11 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>52.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>65</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>92</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>25%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (671 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_3037b241a99ad3f4fef053bcb7e1a6d9.setContent(html_747fea2863c15745acb86e87e6b2e9a6);
+            
+        
+
+        circle_marker_4362d981dac4c902fee06b10145596ca.bindPopup(popup_3037b241a99ad3f4fef053bcb7e1a6d9)
+        ;
+
+        
+    
+    
+            circle_marker_4362d981dac4c902fee06b10145596ca.bindTooltip(
+                `<div>
+                     Bedashing · Delma — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97e0ff4c0f9f2294ba49289bb63ad787 = L.circleMarker(
+                [25.1202606, 56.3253503],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.472066162365222, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_ed1e09068546e87e0e9f9207efc99050 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_deb7db72ea2369679e84c48b758c6f80 = $(`<div id="html_deb7db72ea2369679e84c48b758c6f80" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Taif Mall</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Fujairah</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p75, pressure p68). Customers mostly talk about services (43), moroccan bath (27), workmanship (18).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>51.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>56</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>83</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.7 (495 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_ed1e09068546e87e0e9f9207efc99050.setContent(html_deb7db72ea2369679e84c48b758c6f80);
+            
+        
+
+        circle_marker_97e0ff4c0f9f2294ba49289bb63ad787.bindPopup(popup_ed1e09068546e87e0e9f9207efc99050)
+        ;
+
+        
+    
+    
+            circle_marker_97e0ff4c0f9f2294ba49289bb63ad787.bindTooltip(
+                `<div>
+                     Bedashing · Al Taif Mall — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e4d0065250e8f0950bd4f41856850fd = L.circleMarker(
+                [25.22187, 55.35259],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.858817851170802, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_55583a45b4889a9a2a7bf924fa75c0ab = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_98387c1db583eafe50850c260bedc9fa = $(`<div id="html_98387c1db583eafe50850c260bedc9fa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Dubai Festival City</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p67, pressure p28).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>51.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>42</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>98</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.3 (662 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   97% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_55583a45b4889a9a2a7bf924fa75c0ab.setContent(html_98387c1db583eafe50850c260bedc9fa);
+            
+        
+
+        circle_marker_5e4d0065250e8f0950bd4f41856850fd.bindPopup(popup_55583a45b4889a9a2a7bf924fa75c0ab)
+        ;
+
+        
+    
+    
+            circle_marker_5e4d0065250e8f0950bd4f41856850fd.bindTooltip(
+                `<div>
+                     Tips & Toes · Dubai Festival City — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b4a2e79ded73471569045b904fdc4d4 = L.circleMarker(
+                [24.4399805, 54.5989056],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.503085554239908, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_b119157ecb9e026d484be23a80827ab0 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_1f96f1ed9c622a87fa1c363039012dd7 = $(`<div id="html_1f96f1ed9c622a87fa1c363039012dd7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Khalifa City A</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 100 (4.5 from 2453 reviews). Customers mostly talk about technician (137), receptionist (54), hair colour (41). Operational signals worth a look: front-desk experience, booking or welcome (54 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>51.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>100</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>33</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>1%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (2453 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   99% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_b119157ecb9e026d484be23a80827ab0.setContent(html_1f96f1ed9c622a87fa1c363039012dd7);
+            
+        
+
+        circle_marker_9b4a2e79ded73471569045b904fdc4d4.bindPopup(popup_b119157ecb9e026d484be23a80827ab0)
+        ;
+
+        
+    
+    
+            circle_marker_9b4a2e79ded73471569045b904fdc4d4.bindTooltip(
+                `<div>
+                     Bedashing · Khalifa City A — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2289c207c9e35717c875899a7fa8881 = L.circleMarker(
+                [24.48601, 54.60767],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.550343401926769, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_a94f05feddd23d0b4908593f14069d26 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_88c71e017b08341310e278a48a268484 = $(`<div id="html_88c71e017b08341310e278a48a268484" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Yas Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p83, pressure p39).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>50.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>54</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>100</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>26%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.2 (1021 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   93% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_a94f05feddd23d0b4908593f14069d26.setContent(html_88c71e017b08341310e278a48a268484);
+            
+        
+
+        circle_marker_f2289c207c9e35717c875899a7fa8881.bindPopup(popup_a94f05feddd23d0b4908593f14069d26)
+        ;
+
+        
+    
+    
+            circle_marker_f2289c207c9e35717c875899a7fa8881.bindTooltip(
+                `<div>
+                     Tips & Toes · Yas Mall — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a72df1450775122b6ad5c5e5debe734c = L.circleMarker(
+                [24.2973631, 54.6332474],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.927097749404332, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_08ee73842268462c5d70c27886bf3234 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d39e6ded7cbcc6854191ea9e54f8cc1e = $(`<div id="html_d39e6ded7cbcc6854191ea9e54f8cc1e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Baniyas</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because no dominant signal; nothing stands out either way. Customers mostly talk about services (60), nails (11), technician (11). Operational signals worth a look: front-desk experience, booking or welcome (9 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>47.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>69</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>56</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (694 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_08ee73842268462c5d70c27886bf3234.setContent(html_d39e6ded7cbcc6854191ea9e54f8cc1e);
+            
+        
+
+        circle_marker_a72df1450775122b6ad5c5e5debe734c.bindPopup(popup_08ee73842268462c5d70c27886bf3234)
+        ;
+
+        
+    
+    
+            circle_marker_a72df1450775122b6ad5c5e5debe734c.bindTooltip(
+                `<div>
+                     Bedashing · Baniyas — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0c1afae7370453c1daf6e722ee27597 = L.circleMarker(
+                [24.5243742, 54.6718965],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.034777840832813, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_33288876947bf7707469043c8f526c6d = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_17047c535a691c92c8c87b7a887ee486 = $(`<div id="html_17047c535a691c92c8c87b7a887ee486" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Shahama</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 77 (4.6 from 746 reviews). Customers mostly talk about services (50), eyebrows (38), fun (18).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>46.9</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>77</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>46</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (746 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_33288876947bf7707469043c8f526c6d.setContent(html_17047c535a691c92c8c87b7a887ee486);
+            
+        
+
+        circle_marker_a0c1afae7370453c1daf6e722ee27597.bindPopup(popup_33288876947bf7707469043c8f526c6d)
+        ;
+
+        
+    
+    
+            circle_marker_a0c1afae7370453c1daf6e722ee27597.bindTooltip(
+                `<div>
+                     Bedashing · Shahama — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad2d2620ecf8884440de104b48170192 = L.circleMarker(
+                [25.1131451, 55.2156092],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.026630771528053, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_5020ce34e9f536b5832d361ec3e90542 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_afd060327ef46e7281bda979a4be1333 = $(`<div id="html_afd060327ef46e7281bda979a4be1333" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Barsha</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Dubai</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because it shares 57% of its catchment with Tips & Toes Al Barsha 1.2 km away; health at percentile 75 (4.6 from 742 reviews); attractive market (demand p96, pressure p92). Customers mostly talk about services (123), pedicure (41), hammam (22).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>46.7</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>75</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>88</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>57%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (742 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   82% · medium</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>beats Tips & Toes Al Barsha</td></tr>           </table>         </div></div>`)[0];
+                popup_5020ce34e9f536b5832d361ec3e90542.setContent(html_afd060327ef46e7281bda979a4be1333);
+            
+        
+
+        circle_marker_ad2d2620ecf8884440de104b48170192.bindPopup(popup_5020ce34e9f536b5832d361ec3e90542)
+        ;
+
+        
+    
+    
+            circle_marker_ad2d2620ecf8884440de104b48170192.bindTooltip(
+                `<div>
+                     Bedashing · Al Barsha — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b9f32f27bb37d4184bb0caeb836cbbe = L.circleMarker(
+                [25.751541, 55.9198717],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.081205471969344, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_af298702578c03c619befb3bc35b37bd = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_4a90be0198bdcd350cd106600c99134f = $(`<div id="html_4a90be0198bdcd350cd106600c99134f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Ras Al Khaimah</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Ras Al Khaimah</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 81 (4.6 from 769 reviews). Customers mostly talk about services (38), hair colour (27), pedicure (22).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>46.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>81</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>40</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (769 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   98% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_af298702578c03c619befb3bc35b37bd.setContent(html_4a90be0198bdcd350cd106600c99134f);
+            
+        
+
+        circle_marker_3b9f32f27bb37d4184bb0caeb836cbbe.bindPopup(popup_af298702578c03c619befb3bc35b37bd)
+        ;
+
+        
+    
+    
+            circle_marker_3b9f32f27bb37d4184bb0caeb836cbbe.bindTooltip(
+                `<div>
+                     Bedashing · Ras Al Khaimah — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6387f1d4fbde806ece6f4f744a1aad6 = L.circleMarker(
+                [24.42013, 54.57495],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.853810043561028, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_352b4681ae3195164d1b8e75866dc64d = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_df9ea65f4adaa182b4f793f7bddb488f = $(`<div id="html_df9ea65f4adaa182b4f793f7bddb488f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Khalifa City</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at percentile 79 (4.3 from 1203 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>44.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>79</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>36</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.3 (1203 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   81% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_352b4681ae3195164d1b8e75866dc64d.setContent(html_df9ea65f4adaa182b4f793f7bddb488f);
+            
+        
+
+        circle_marker_c6387f1d4fbde806ece6f4f744a1aad6.bindPopup(popup_352b4681ae3195164d1b8e75866dc64d)
+        ;
+
+        
+    
+    
+            circle_marker_c6387f1d4fbde806ece6f4f744a1aad6.bindTooltip(
+                `<div>
+                     Tips & Toes · Khalifa City — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81af7616dd3d767780ccee3134ba41ba = L.circleMarker(
+                [25.09286, 55.17062],
+                {"bubblingMouseEvents": true, "color": "#1C7C54", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.723922371584726, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_82957748ce276bbcb330779db42f4b06 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e49227c750d5e386dd2d8c26733b5f99 = $(`<div id="html_e49227c750d5e386dd2d8c26733b5f99" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">The Greens Souk</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because attractive market (demand p77, pressure p77).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>42.9</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>46</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>71</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>2%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (601 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   68% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_82957748ce276bbcb330779db42f4b06.setContent(html_e49227c750d5e386dd2d8c26733b5f99);
+            
+        
+
+        circle_marker_81af7616dd3d767780ccee3134ba41ba.bindPopup(popup_82957748ce276bbcb330779db42f4b06)
+        ;
+
+        
+    
+    
+            circle_marker_81af7616dd3d767780ccee3134ba41ba.bindTooltip(
+                `<div>
+                     Tips & Toes · The Greens Souk — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08eaaf5d68f5656542c8d5726bf96324 = L.circleMarker(
+                [25.19008, 55.26719],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": "4,3", "dashOffset": null, "fill": true, "fillColor": "#1C7C54", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.372684056006959, "stroke": true, "weight": 2.5}
+            ).addTo(feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe);
+        
+    
+        var popup_22fc1bbbdd83a9110c1201803f220abc = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2656d97ab237810955d7c2ef1dba4825 = $(`<div id="html_2656d97ab237810955d7c2ef1dba4825" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Business Bay</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#1C7C54;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             PROTECT</div>           <div style="margin:8px 0;line-height:1.45">Protect because health at network percentile 38 (4.5 from 456 reviews); attractive market (demand p88, pressure p73).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>41.9</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>38</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>96</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>29%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (456 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#9E2B2B">                   58% · FRAGILE</td></tr>                        </table>         </div></div>`)[0];
+                popup_22fc1bbbdd83a9110c1201803f220abc.setContent(html_2656d97ab237810955d7c2ef1dba4825);
+            
+        
+
+        circle_marker_08eaaf5d68f5656542c8d5726bf96324.bindPopup(popup_22fc1bbbdd83a9110c1201803f220abc)
+        ;
+
+        
+    
+    
+            circle_marker_08eaaf5d68f5656542c8d5726bf96324.bindTooltip(
+                `<div>
+                     Tips & Toes · Business Bay — PROTECT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe.addTo(map_e71e143d99ee4c024473277eb87aaca0);
+        
+    
+            var feature_group_7f3710defb45a60ffd24683c9d3d1565 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_7b0dbd855fd1002c1f15c0266f18262e = L.circleMarker(
+                [25.05357, 55.27548],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.305438840143005, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_cb55a47374b407ead372fa4f13d20f5b = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_21fe7f0249489a0b4de163aadabead33 = $(`<div id="html_21fe7f0249489a0b4de163aadabead33" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Arabian Ranches</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at percentile 86 (4.6 from 885 reviews); weak market (demand p17, competitive pressure p28).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>40.6</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>86</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>17</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (885 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   60% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_cb55a47374b407ead372fa4f13d20f5b.setContent(html_21fe7f0249489a0b4de163aadabead33);
+            
+        
+
+        circle_marker_7b0dbd855fd1002c1f15c0266f18262e.bindPopup(popup_cb55a47374b407ead372fa4f13d20f5b)
+        ;
+
+        
+    
+    
+            circle_marker_7b0dbd855fd1002c1f15c0266f18262e.bindTooltip(
+                `<div>
+                     Tips & Toes · Arabian Ranches — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58b4f90c53c22afa1773336030ecfd7f = L.circleMarker(
+                [25.2322986, 55.4329599],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.175912428434767, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_138a737a500f566c92fd33d9fd7f13aa = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_90d57cbb5db7f4f23601d9c5451cac33 = $(`<div id="html_90d57cbb5db7f4f23601d9c5451cac33" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Mirdif 35</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way. Customers mostly talk about services (121), pedicure (59), technician (35). Operational signals worth a look: in-store hygiene (21 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>40.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>71</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>48</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>19%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (817 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   96% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_138a737a500f566c92fd33d9fd7f13aa.setContent(html_90d57cbb5db7f4f23601d9c5451cac33);
+            
+        
+
+        circle_marker_58b4f90c53c22afa1773336030ecfd7f.bindPopup(popup_138a737a500f566c92fd33d9fd7f13aa)
+        ;
+
+        
+    
+    
+            circle_marker_58b4f90c53c22afa1773336030ecfd7f.bindTooltip(
+                `<div>
+                     Bedashing · Mirdif 35 — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45f37587e64d65f101a8e001e0702632 = L.circleMarker(
+                [24.3481854, 54.6238561],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.956554181058857, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_7fa5c0bad281e1b92ddba656e705d3ac = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_6a14a7ed1320fbdb5cf20a4e49d45a50 = $(`<div id="html_6a14a7ed1320fbdb5cf20a4e49d45a50" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Shakhbout City</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at percentile 90 (4.5 from 1268 reviews); weak market (demand p19, competitive pressure p39). Customers mostly talk about services (97), technician (58), cleanliness (25). Operational signals worth a look: in-store hygiene (25 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>40.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>90</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>12</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (1268 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   68% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_7fa5c0bad281e1b92ddba656e705d3ac.setContent(html_6a14a7ed1320fbdb5cf20a4e49d45a50);
+            
+        
+
+        circle_marker_45f37587e64d65f101a8e001e0702632.bindPopup(popup_7fa5c0bad281e1b92ddba656e705d3ac)
+        ;
+
+        
+    
+    
+            circle_marker_45f37587e64d65f101a8e001e0702632.bindTooltip(
+                `<div>
+                     Bedashing · Shakhbout City — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82aeb7d051e31c2aafc69daf21b9a6d3 = L.circleMarker(
+                [25.07664, 55.14022],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.375284258492439, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_2265165a9712ebdaaa6ed68452ad7308 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_499d3f757f7d7491edd5bfde4bf325e6 = $(`<div id="html_499d3f757f7d7491edd5bfde4bf325e6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Dubai Marina Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at network percentile 35 (4.4 from 457 reviews); attractive market (demand p98, pressure p96).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>39.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>35</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>85</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>15%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (457 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   78% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_2265165a9712ebdaaa6ed68452ad7308.setContent(html_499d3f757f7d7491edd5bfde4bf325e6);
+            
+        
+
+        circle_marker_82aeb7d051e31c2aafc69daf21b9a6d3.bindPopup(popup_2265165a9712ebdaaa6ed68452ad7308)
+        ;
+
+        
+    
+    
+            circle_marker_82aeb7d051e31c2aafc69daf21b9a6d3.bindTooltip(
+                `<div>
+                     Tips & Toes · Dubai Marina Mall — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e66008c5e265cd24156d436b8ab49ab = L.circleMarker(
+                [24.4428939, 54.7396974],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.421067626297923, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_e3a152a13faefb0d44a3c9b137a293a0 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d3181d0f61948a2f6530b68a6fa4371d = $(`<div id="html_d3181d0f61948a2f6530b68a6fa4371d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Falah</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at percentile 88 (4.6 from 948 reviews); weak market (demand p15, competitive pressure p11). Customers mostly talk about cherry (25), poetry (18), artists (18).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>39.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>88</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>21</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>12%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (948 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   89% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_e3a152a13faefb0d44a3c9b137a293a0.setContent(html_d3181d0f61948a2f6530b68a6fa4371d);
+            
+        
+
+        circle_marker_2e66008c5e265cd24156d436b8ab49ab.bindPopup(popup_e3a152a13faefb0d44a3c9b137a293a0)
+        ;
+
+        
+    
+    
+            circle_marker_2e66008c5e265cd24156d436b8ab49ab.bindTooltip(
+                `<div>
+                     Bedashing · Al Falah — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5082c378836f0d1ffe9c4a4c01a8ac16 = L.circleMarker(
+                [25.039154, 55.1659736],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.330686329267003, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_5b2db214cc0d290c9451d6708821e3ee = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ebafe2bebcd0656b09b401b271d7d7da = $(`<div id="html_ebafe2bebcd0656b09b401b271d7d7da" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Jumeirah Park</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way. Customers mostly talk about pedicure (62), services (45), technician (21).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>38.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>58</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>44</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.8 (440 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_5b2db214cc0d290c9451d6708821e3ee.setContent(html_ebafe2bebcd0656b09b401b271d7d7da);
+            
+        
+
+        circle_marker_5082c378836f0d1ffe9c4a4c01a8ac16.bindPopup(popup_5b2db214cc0d290c9451d6708821e3ee)
+        ;
+
+        
+    
+    
+            circle_marker_5082c378836f0d1ffe9c4a4c01a8ac16.bindTooltip(
+                `<div>
+                     Bedashing · Jumeirah Park — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce25dd932fd4ec15d2f2523d31802774 = L.circleMarker(
+                [24.2266835, 55.6599794],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.044505494044731, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_2b0857b54308aecb83fd029314b854da = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_61f5f01fa3b1b7fa0eaf4858f3f8edfd = $(`<div id="html_61f5f01fa3b1b7fa0eaf4858f3f8edfd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Ain</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at percentile 94 (4.7 from 1325 reviews); weak market (demand p0, competitive pressure p11). Customers mostly talk about services (166), pedicure (50), treatment (22).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>37.7</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>94</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>0</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.7 (1325 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   89% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_2b0857b54308aecb83fd029314b854da.setContent(html_61f5f01fa3b1b7fa0eaf4858f3f8edfd);
+            
+        
+
+        circle_marker_ce25dd932fd4ec15d2f2523d31802774.bindPopup(popup_2b0857b54308aecb83fd029314b854da)
+        ;
+
+        
+    
+    
+            circle_marker_ce25dd932fd4ec15d2f2523d31802774.bindTooltip(
+                `<div>
+                     Bedashing · Al Ain — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2b0dadc0c8998aafa6930da30da94f8 = L.circleMarker(
+                [24.3667831, 54.5403404],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.201080064641763, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_62656da8d1ef596114c04aa4be8e994b = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_310f6331045a0f5d5b8644c88bef78e0 = $(`<div id="html_310f6331045a0f5d5b8644c88bef78e0" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Mohammed Bin Zayed City</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way. Customers mostly talk about services (52), technician (35), eyebrows (31).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>36.0</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>60</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>35</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (830 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_62656da8d1ef596114c04aa4be8e994b.setContent(html_310f6331045a0f5d5b8644c88bef78e0);
+            
+        
+
+        circle_marker_c2b0dadc0c8998aafa6930da30da94f8.bindPopup(popup_62656da8d1ef596114c04aa4be8e994b)
+        ;
+
+        
+    
+    
+            circle_marker_c2b0dadc0c8998aafa6930da30da94f8.bindTooltip(
+                `<div>
+                     Bedashing · Mohammed Bin Zayed City — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65b2ab661448f6326263b4178f07fae0 = L.circleMarker(
+                [24.4934924, 54.5868369],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.995881947269503, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_5e654e8190ce8fcbebc8af64eccafda3 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_063d1dc7e92b025deeabf2b00ccce8a6 = $(`<div id="html_063d1dc7e92b025deeabf2b00ccce8a6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">West Yas</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way. Customers mostly talk about services (53), technician (52), nails (19).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>35.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>73</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>25</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>11%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (727 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_5e654e8190ce8fcbebc8af64eccafda3.setContent(html_063d1dc7e92b025deeabf2b00ccce8a6);
+            
+        
+
+        circle_marker_65b2ab661448f6326263b4178f07fae0.bindPopup(popup_5e654e8190ce8fcbebc8af64eccafda3)
+        ;
+
+        
+    
+    
+            circle_marker_65b2ab661448f6326263b4178f07fae0.bindTooltip(
+                `<div>
+                     Bedashing · West Yas — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_35085cd539c3499ea62d18cfd779c768 = L.circleMarker(
+                [25.11122, 55.37478],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.431785403137699, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_99631a9bb971e1c7fdb168a730aad436 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_6e29c1a8ce68878454a5b588a22e0fc4 = $(`<div id="html_6e29c1a8ce68878454a5b588a22e0fc4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Dubai Silicon Central</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way.</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>35.0</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>40</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>54</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (479 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_99631a9bb971e1c7fdb168a730aad436.setContent(html_6e29c1a8ce68878454a5b588a22e0fc4);
+            
+        
+
+        circle_marker_35085cd539c3499ea62d18cfd779c768.bindPopup(popup_99631a9bb971e1c7fdb168a730aad436)
+        ;
+
+        
+    
+    
+            circle_marker_35085cd539c3499ea62d18cfd779c768.bindTooltip(
+                `<div>
+                     Tips & Toes · Dubai Silicon Central — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39b58cbc4372bc21dca08782d5292603 = L.circleMarker(
+                [24.4527718, 54.6411421],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.57000744582675, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_ec120f74f0f8d1bf14c25f90392e81e9 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ebe8661a8f6c099c9ec8d9b965f88b42 = $(`<div id="html_ebe8661a8f6c099c9ec8d9b965f88b42" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Zayed International Airport</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at percentile 83 (4.9 from 535 reviews); weak market (demand p8, competitive pressure p28). Customers mostly talk about manicure (73), flight (58), layover (26).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>33.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>83</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>6</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>5%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.9 (535 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   99% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_ec120f74f0f8d1bf14c25f90392e81e9.setContent(html_ebe8661a8f6c099c9ec8d9b965f88b42);
+            
+        
+
+        circle_marker_39b58cbc4372bc21dca08782d5292603.bindPopup(popup_ec120f74f0f8d1bf14c25f90392e81e9)
+        ;
+
+        
+    
+    
+            circle_marker_39b58cbc4372bc21dca08782d5292603.bindTooltip(
+                `<div>
+                     Bedashing · Zayed International Airport — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9af5e3e09801d2a30d5bae52eeb4698c = L.circleMarker(
+                [25.19704, 55.27895],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.419060117453027, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_8ce7a3f92a389bf340e37e052ca261f7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_aa88e98ade7e6a5caceb6d9f910a12fc = $(`<div id="html_aa88e98ade7e6a5caceb6d9f910a12fc" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">The Dubai Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at network percentile 19 (4.1 from 474 reviews); attractive market (demand p90, pressure p85).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>33.4</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>19</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>90</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>24%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.1 (474 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   94% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_8ce7a3f92a389bf340e37e052ca261f7.setContent(html_aa88e98ade7e6a5caceb6d9f910a12fc);
+            
+        
+
+        circle_marker_9af5e3e09801d2a30d5bae52eeb4698c.bindPopup(popup_8ce7a3f92a389bf340e37e052ca261f7)
+        ;
+
+        
+    
+    
+            circle_marker_9af5e3e09801d2a30d5bae52eeb4698c.bindTooltip(
+                `<div>
+                     Tips & Toes · The Dubai Mall — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67e094843d1bed556135ea9be9837743 = L.circleMarker(
+                [25.1595625, 55.3696875],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.779999111821512, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_d21f0cd83815d41d46f03f5b8e1124ec = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_42c232d67de13561aa098e275e1f1ee6 = $(`<div id="html_42c232d67de13561aa098e275e1f1ee6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Nad Al Sheba</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: weak market (demand p27, competitive pressure p28). Customers mostly talk about services (68), pedicure (41), blow dry (30). Operational signals worth a look: front-desk experience, booking or welcome (12 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>32.7</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>62</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>23</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (626 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_d21f0cd83815d41d46f03f5b8e1124ec.setContent(html_42c232d67de13561aa098e275e1f1ee6);
+            
+        
+
+        circle_marker_67e094843d1bed556135ea9be9837743.bindPopup(popup_d21f0cd83815d41d46f03f5b8e1124ec)
+        ;
+
+        
+    
+    
+            circle_marker_67e094843d1bed556135ea9be9837743.bindTooltip(
+                `<div>
+                     Bedashing · Nad Al Sheba — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac96e6670d2ec259c7e24c15a8cb3ef0 = L.circleMarker(
+                [25.19798, 55.36038],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5634719199411435, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_f5f40a519843bd000ada959047571ae8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_21df54eee71e4d03cbed08f756cb2660 = $(`<div id="html_21df54eee71e4d03cbed08f756cb2660" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Creek Beach</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: health at network percentile 10 (4.5 from 198 reviews); attractive market (demand p56, pressure p28).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>32.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>10</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>81</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (198 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   92% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_f5f40a519843bd000ada959047571ae8.setContent(html_21df54eee71e4d03cbed08f756cb2660);
+            
+        
+
+        circle_marker_ac96e6670d2ec259c7e24c15a8cb3ef0.bindPopup(popup_f5f40a519843bd000ada959047571ae8)
+        ;
+
+        
+    
+    
+            circle_marker_ac96e6670d2ec259c7e24c15a8cb3ef0.bindTooltip(
+                `<div>
+                     Tips & Toes · Creek Beach — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c45f2d1af91472c6120a33ff96deeea2 = L.circleMarker(
+                [25.3192096, 55.4799114],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.750981867364432, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_5eb18b258ba01354af426774195394be = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_5c3c0f14baf3dff71613cecac3c1d6d7 = $(`<div id="html_5c3c0f14baf3dff71613cecac3c1d6d7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Jada</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Sharjah</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: no dominant signal; nothing stands out either way. Customers mostly talk about services (40), pedicure (34), eyebrows (24). Operational signals worth a look: in-store hygiene (19 mentions).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>31.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>52</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>30</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (613 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_5eb18b258ba01354af426774195394be.setContent(html_5c3c0f14baf3dff71613cecac3c1d6d7);
+            
+        
+
+        circle_marker_c45f2d1af91472c6120a33ff96deeea2.bindPopup(popup_5eb18b258ba01354af426774195394be)
+        ;
+
+        
+    
+    
+            circle_marker_c45f2d1af91472c6120a33ff96deeea2.bindTooltip(
+                `<div>
+                     Bedashing · Al Jada — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e610195b812b4c181937c285bca3ced4 = L.circleMarker(
+                [25.06714, 55.15679],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.22777085064038, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_737787a76cabaa9b1f43f0590d726a8e = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3f99c316d223b255c8ca4e282dccb3b5 = $(`<div id="html_3f99c316d223b255c8ca4e282dccb3b5" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Meadows Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: it shares 43% of its catchment with Tips & Toes Dubai Marina Mall 1.98 km away.</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>30.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>50</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>60</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>43%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.7 (402 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   84% · medium</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>beats Tips & Toes Dubai Marina Mall</td></tr>           </table>         </div></div>`)[0];
+                popup_737787a76cabaa9b1f43f0590d726a8e.setContent(html_3f99c316d223b255c8ca4e282dccb3b5);
+            
+        
+
+        circle_marker_e610195b812b4c181937c285bca3ced4.bindPopup(popup_737787a76cabaa9b1f43f0590d726a8e)
+        ;
+
+        
+    
+    
+            circle_marker_e610195b812b4c181937c285bca3ced4.bindTooltip(
+                `<div>
+                     Tips & Toes · Meadows Mall — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad5add9f2dce30d3c46d65b5b77e59af = L.circleMarker(
+                [25.10238, 55.21607],
+                {"bubblingMouseEvents": true, "color": "#333", "dashArray": "4,3", "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.191423692521127, "stroke": true, "weight": 2.5}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_5a83fd09c235f8d56fdd440893ad52ce = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_5e7d9a5a8584be0d7045dc813c62e8c1 = $(`<div id="html_5e7d9a5a8584be0d7045dc813c62e8c1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Barsha</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: it shares 66% of its catchment with Bedashing Al Barsha 1.2 km away; attractive market (demand p86, pressure p90).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>28.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>48</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>73</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>66%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.2 (825 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#9E2B2B">                   56% · FRAGILE</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>loses to Bedashing Al Barsha</td></tr>           </table>         </div></div>`)[0];
+                popup_5a83fd09c235f8d56fdd440893ad52ce.setContent(html_5e7d9a5a8584be0d7045dc813c62e8c1);
+            
+        
+
+        circle_marker_ad5add9f2dce30d3c46d65b5b77e59af.bindPopup(popup_5a83fd09c235f8d56fdd440893ad52ce)
+        ;
+
+        
+    
+    
+            circle_marker_ad5add9f2dce30d3c46d65b5b77e59af.bindTooltip(
+                `<div>
+                     Tips & Toes · Al Barsha — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_11a63bc958ba78fe70f45f6c66cba9c1 = L.circleMarker(
+                [25.06614, 55.19213],
+                {"bubblingMouseEvents": true, "color": "#B3860F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#B3860F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.523959264800121, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_7f3710defb45a60ffd24683c9d3d1565);
+        
+    
+        var popup_10b207188cb61144bbf429e46a8ddcc8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_aaa68300a86149edea593192c0955677 = $(`<div id="html_aaa68300a86149edea593192c0955677" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">The Springs Souk</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#B3860F;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             HOLD</div>           <div style="margin:8px 0;line-height:1.45">Hold: weak market (demand p33, competitive pressure p55).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>23.9</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>44</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>19</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>2%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (516 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_10b207188cb61144bbf429e46a8ddcc8.setContent(html_aaa68300a86149edea593192c0955677);
+            
+        
+
+        circle_marker_11a63bc958ba78fe70f45f6c66cba9c1.bindPopup(popup_10b207188cb61144bbf429e46a8ddcc8)
+        ;
+
+        
+    
+    
+            circle_marker_11a63bc958ba78fe70f45f6c66cba9c1.bindTooltip(
+                `<div>
+                     Tips & Toes · The Springs Souk — HOLD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_7f3710defb45a60ffd24683c9d3d1565.addTo(map_e71e143d99ee4c024473277eb87aaca0);
+        
+    
+            var feature_group_4c999cb3f32b9ba605789bd38704dc63 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_8f810f76114b47a7cd690560ffc14d44 = L.circleMarker(
+                [24.47604, 54.32143],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.266230894930127, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_e564076ae5662b8ab56fc0985ab639b4 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_c6b0360e654ce80d8557fe98f8213e2f = $(`<div id="html_c6b0360e654ce80d8557fe98f8213e2f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Marina Mall AUH</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 29 (4.4 from 416 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>27.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>29</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>62</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>24%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (416 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   82% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_e564076ae5662b8ab56fc0985ab639b4.setContent(html_c6b0360e654ce80d8557fe98f8213e2f);
+            
+        
+
+        circle_marker_8f810f76114b47a7cd690560ffc14d44.bindPopup(popup_e564076ae5662b8ab56fc0985ab639b4)
+        ;
+
+        
+    
+    
+            circle_marker_8f810f76114b47a7cd690560ffc14d44.bindTooltip(
+                `<div>
+                     Tips & Toes · Marina Mall AUH — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c0ac677997abfb47f3b5cefc1d0d565 = L.circleMarker(
+                [25.23833, 55.25279],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.1547005383792515, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_8a5816e95486a02eaf590cba69a5c0a0 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_731eaf3af983e67c1c3fce2f830d6b5c = $(`<div id="html_731eaf3af983e67c1c3fce2f830d6b5c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Port De La Mer</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 2 (4.6 from 108 reviews); attractive market (demand p64, pressure p55).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>27.0</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>2</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>75</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.6 (108 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   61% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_8a5816e95486a02eaf590cba69a5c0a0.setContent(html_731eaf3af983e67c1c3fce2f830d6b5c);
+            
+        
+
+        circle_marker_1c0ac677997abfb47f3b5cefc1d0d565.bindPopup(popup_8a5816e95486a02eaf590cba69a5c0a0)
+        ;
+
+        
+    
+    
+            circle_marker_1c0ac677997abfb47f3b5cefc1d0d565.bindTooltip(
+                `<div>
+                     Tips & Toes · Port De La Mer — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c2fce42b1f557c028d7a91bb9dd762b = L.circleMarker(
+                [25.06033, 55.23549],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.188635067065801, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_7618f967738edc109698c5b9b5d67467 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d730e41f27b664d0b9328369580b15e8 = $(`<div id="html_d730e41f27b664d0b9328369580b15e8" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Arjan</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 33 (4.5 from 388 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>26.6</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>33</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>38</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (388 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   71% · medium</td></tr>                        </table>         </div></div>`)[0];
+                popup_7618f967738edc109698c5b9b5d67467.setContent(html_d730e41f27b664d0b9328369580b15e8);
+            
+        
+
+        circle_marker_7c2fce42b1f557c028d7a91bb9dd762b.bindPopup(popup_7618f967738edc109698c5b9b5d67467)
+        ;
+
+        
+    
+    
+            circle_marker_7c2fce42b1f557c028d7a91bb9dd762b.bindTooltip(
+                `<div>
+                     Tips & Toes · Arjan — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec3d0382d8243886383fbeb96e931f7c = L.circleMarker(
+                [24.4995625, 54.6254375],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.606314699422329, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_cb35a851d91e7d323abbd0169605446c = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_bd17ff73277cdc727fb21ac2c37f539f = $(`<div id="html_bd17ff73277cdc727fb21ac2c37f539f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Noya Plaza</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 17 (4.7 from 209 reviews). Customers mostly talk about pedicure (22), technician (9), blow dry (8).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>24.4</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>17</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>52</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>3%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.7 (209 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   96% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_cb35a851d91e7d323abbd0169605446c.setContent(html_bd17ff73277cdc727fb21ac2c37f539f);
+            
+        
+
+        circle_marker_ec3d0382d8243886383fbeb96e931f7c.bindPopup(popup_cb35a851d91e7d323abbd0169605446c)
+        ;
+
+        
+    
+    
+            circle_marker_ec3d0382d8243886383fbeb96e931f7c.bindTooltip(
+                `<div>
+                     Bedashing · Noya Plaza — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89dc505416392299ebaa4e84c35402b0 = L.circleMarker(
+                [24.48842, 54.40058],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.009237924447236, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_313da3b408bc9c7a295d8d047ac48fe8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_187b39152879d04c491d4163977a1317 = $(`<div id="html_187b39152879d04c491d4163977a1317" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Reem Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because it shares 34% of its catchment with Bedashing Delma 2.78 km away; health at network percentile 14 (4.3 from 327 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>21.2</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>14</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>69</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>34%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.3 (327 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   98% · robust</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>loses to Bedashing Delma</td></tr>           </table>         </div></div>`)[0];
+                popup_313da3b408bc9c7a295d8d047ac48fe8.setContent(html_187b39152879d04c491d4163977a1317);
+            
+        
+
+        circle_marker_89dc505416392299ebaa4e84c35402b0.bindPopup(popup_313da3b408bc9c7a295d8d047ac48fe8)
+        ;
+
+        
+    
+    
+            circle_marker_89dc505416392299ebaa4e84c35402b0.bindTooltip(
+                `<div>
+                     Tips & Toes · Reem Mall — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee3d77238801e964207f54a20969021a = L.circleMarker(
+                [24.46446, 54.327],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.17732421580727, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_ed5508a617d331ebb9dee35c5c51215b = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3ce917dfcb4ed86eba88e4694e616755 = $(`<div id="html_3ce917dfcb4ed86eba88e4694e616755" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Nation Towers</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because it shares 63% of its catchment with Bedashing Khaleej Al Arabi 2.78 km away; health at network percentile 31 (4.5 from 384 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>20.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>31</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>67</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>63%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (384 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   97% · robust</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>loses to Bedashing Khaleej Al Arabi</td></tr>           </table>         </div></div>`)[0];
+                popup_ed5508a617d331ebb9dee35c5c51215b.setContent(html_3ce917dfcb4ed86eba88e4694e616755);
+            
+        
+
+        circle_marker_ee3d77238801e964207f54a20969021a.bindPopup(popup_ed5508a617d331ebb9dee35c5c51215b)
+        ;
+
+        
+    
+    
+            circle_marker_ee3d77238801e964207f54a20969021a.bindTooltip(
+                `<div>
+                     Tips & Toes · Nation Towers — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40166c315b3ae576f358174e7193603a = L.circleMarker(
+                [25.21602, 55.40807],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.927705730321941, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_355ba364bf6a9b3c914d96d95cfb9799 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2db9ebf6a39b7d38850f3a61bad998c9 = $(`<div id="html_2db9ebf6a39b7d38850f3a61bad998c9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">City Centre Mirdif</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 4 (4.0 from 301 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>19.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>4</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>58</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>10%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.0 (301 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_355ba364bf6a9b3c914d96d95cfb9799.setContent(html_2db9ebf6a39b7d38850f3a61bad998c9);
+            
+        
+
+        circle_marker_40166c315b3ae576f358174e7193603a.bindPopup(popup_355ba364bf6a9b3c914d96d95cfb9799)
+        ;
+
+        
+    
+    
+            circle_marker_40166c315b3ae576f358174e7193603a.bindTooltip(
+                `<div>
+                     Tips & Toes · City Centre Mirdif — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d98c682121d76c569c49ca7bb665786e = L.circleMarker(
+                [25.1214, 55.26434],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.651785416368723, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_4025e93e1ba709b059d966e94c672bf9 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_b5fd7cb19daff81048135055e1b37ac3 = $(`<div id="html_b5fd7cb19daff81048135055e1b37ac3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Park Point</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 8 (4.4 from 221 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>17.9</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>8</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>42</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (221 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_4025e93e1ba709b059d966e94c672bf9.setContent(html_b5fd7cb19daff81048135055e1b37ac3);
+            
+        
+
+        circle_marker_d98c682121d76c569c49ca7bb665786e.bindPopup(popup_4025e93e1ba709b059d966e94c672bf9)
+        ;
+
+        
+    
+    
+            circle_marker_d98c682121d76c569c49ca7bb665786e.bindTooltip(
+                `<div>
+                     Tips & Toes · Park Point — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc2196cd89650d336beb56b61f20cb16 = L.circleMarker(
+                [25.04034, 55.19694],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.182986967154278, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_bfbbbaca87f4ea9baf521b1b0288dc89 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_4d6d79e746e92c28a7aa443f8c588fde = $(`<div id="html_4d6d79e746e92c28a7aa443f8c588fde" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Me'aisem City Centre</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 15 (4.2 from 386 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>15.6</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>15</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>27</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.2 (386 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_bfbbbaca87f4ea9baf521b1b0288dc89.setContent(html_4d6d79e746e92c28a7aa443f8c588fde);
+            
+        
+
+        circle_marker_dc2196cd89650d336beb56b61f20cb16.bindPopup(popup_bfbbbaca87f4ea9baf521b1b0288dc89)
+        ;
+
+        
+    
+    
+            circle_marker_dc2196cd89650d336beb56b61f20cb16.bindTooltip(
+                `<div>
+                     Tips & Toes · Me'aisem City Centre — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59191e15a84dd5d8a3bd09d198f46da9 = L.circleMarker(
+                [23.6280524, 53.7141144],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.102320880936055, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_3652ab864ab66a0cfa0efe519b7e4fc8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3c7ceee4b23d3a0add0f804561610669 = $(`<div id="html_3c7ceee4b23d3a0add0f804561610669" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Dhafra</div>           <div style="color:#666;margin-bottom:6px">Bedashing · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 27 (4.5 from 358 reviews); weak market (demand p6, competitive pressure p11).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>14.1</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>27</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>10</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (358 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_3652ab864ab66a0cfa0efe519b7e4fc8.setContent(html_3c7ceee4b23d3a0add0f804561610669);
+            
+        
+
+        circle_marker_59191e15a84dd5d8a3bd09d198f46da9.bindPopup(popup_3652ab864ab66a0cfa0efe519b7e4fc8)
+        ;
+
+        
+    
+    
+            circle_marker_59191e15a84dd5d8a3bd09d198f46da9.bindTooltip(
+                `<div>
+                     Bedashing · Al Dhafra — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10275aafc48af74886e5301b64ed756c = L.circleMarker(
+                [24.38691, 54.7226],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.454524670486059, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_6e6dad93ddc7d33e402d431cf85023c3 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_a021bbadd09876df8719e3e9ad752548 = $(`<div id="html_a021bbadd09876df8719e3e9ad752548" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Shamkha Mall</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 23 (4.2 from 488 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>13.6</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>23</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>30</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>24%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.2 (488 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_6e6dad93ddc7d33e402d431cf85023c3.setContent(html_a021bbadd09876df8719e3e9ad752548);
+            
+        
+
+        circle_marker_10275aafc48af74886e5301b64ed756c.bindPopup(popup_6e6dad93ddc7d33e402d431cf85023c3)
+        ;
+
+        
+    
+    
+            circle_marker_10275aafc48af74886e5301b64ed756c.bindTooltip(
+                `<div>
+                     Tips & Toes · Shamkha Mall — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7627709535f7e6938b8206d80776f1e = L.circleMarker(
+                [24.54597, 54.44369],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.09054308024742, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_86fe59a0e49c91895ac1fb4cf01042a7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2017fed1a64fea96c0b25193561e54b4 = $(`<div id="html_2017fed1a64fea96c0b25193561e54b4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Saadiyat Island</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 25 (4.5 from 354 reviews); weak market (demand p12, competitive pressure p39).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>12.7</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>25</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>8</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.5 (354 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_86fe59a0e49c91895ac1fb4cf01042a7.setContent(html_2017fed1a64fea96c0b25193561e54b4);
+            
+        
+
+        circle_marker_b7627709535f7e6938b8206d80776f1e.bindPopup(popup_86fe59a0e49c91895ac1fb4cf01042a7)
+        ;
+
+        
+    
+    
+            circle_marker_b7627709535f7e6938b8206d80776f1e.bindTooltip(
+                `<div>
+                     Tips & Toes · Saadiyat Island — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2031e1915b2ec91a2bdaa5fa81f3bb4 = L.circleMarker(
+                [24.45138, 54.33797],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.899552966822197, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_f0fb4eb81ab3490fb4210989e8786dcf = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d81f0ca8433a1558dacc738686948632 = $(`<div id="html_d81f0ca8433a1558dacc738686948632" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Khaleej Al Arabi</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because it shares 81% of its catchment with Bedashing Khaleej Al Arabi 1.8 km away; health at network percentile 36 (4.2 from 681 reviews).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>11.8</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>36</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>50</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>81%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.2 (681 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>             <tr><td style='color:#666'>Head-to-head</td><td>loses to Bedashing Khaleej Al Arabi</td></tr>           </table>         </div></div>`)[0];
+                popup_f0fb4eb81ab3490fb4210989e8786dcf.setContent(html_d81f0ca8433a1558dacc738686948632);
+            
+        
+
+        circle_marker_a2031e1915b2ec91a2bdaa5fa81f3bb4.bindPopup(popup_f0fb4eb81ab3490fb4210989e8786dcf)
+        ;
+
+        
+    
+    
+            circle_marker_a2031e1915b2ec91a2bdaa5fa81f3bb4.bindTooltip(
+                `<div>
+                     Tips & Toes · Khaleej Al Arabi — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86c2759a3b1fbef696411326a0690d36 = L.circleMarker(
+                [24.43711, 54.71182],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.119864892037658, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_b7399681df7d3e629138b00b3ac0e85a = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_afc0763ca6b1f666b2ef0b282472e34b = $(`<div id="html_afc0763ca6b1f666b2ef0b282472e34b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Falah 1</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 21 (4.4 from 364 reviews); weak market (demand p12, competitive pressure p11).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>9.4</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>21</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>14</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>16%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.4 (364 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_b7399681df7d3e629138b00b3ac0e85a.setContent(html_afc0763ca6b1f666b2ef0b282472e34b);
+            
+        
+
+        circle_marker_86c2759a3b1fbef696411326a0690d36.bindPopup(popup_b7399681df7d3e629138b00b3ac0e85a)
+        ;
+
+        
+    
+    
+            circle_marker_86c2759a3b1fbef696411326a0690d36.bindTooltip(
+                `<div>
+                     Tips & Toes · Al Falah 1 — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d37bd64d1a2d945a17b712fe3d5bc4ed = L.circleMarker(
+                [24.43711, 54.71182],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.8492574418992485, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_eaf010d9277b61b4074fc830741dab49 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_a295b3cbe459428217b63d88282b2757 = $(`<div id="html_a295b3cbe459428217b63d88282b2757" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Al Falah 5</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Abu Dhabi</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 12 (4.3 from 277 reviews); weak market (demand p12, competitive pressure p11).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>5.5</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>12</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>14</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>16%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.3 (277 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_eaf010d9277b61b4074fc830741dab49.setContent(html_a295b3cbe459428217b63d88282b2757);
+            
+        
+
+        circle_marker_d37bd64d1a2d945a17b712fe3d5bc4ed.bindPopup(popup_eaf010d9277b61b4074fc830741dab49)
+        ;
+
+        
+    
+    
+            circle_marker_d37bd64d1a2d945a17b712fe3d5bc4ed.bindTooltip(
+                `<div>
+                     Tips & Toes · Al Falah 5 — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db6f6c179ed5bc7e3bf21c2fb30e19d8 = L.circleMarker(
+                [25.00949, 55.30579],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.048787657176197, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_43fe27c977523ac1600412581647af74 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_bfc90a176bd8c008b63596099c1a9965 = $(`<div id="html_bfc90a176bd8c008b63596099c1a9965" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">Mira Town Centre</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 6 (4.0 from 340 reviews); weak market (demand p3, competitive pressure p11).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>3.3</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>6</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>3</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.0 (340 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_43fe27c977523ac1600412581647af74.setContent(html_bfc90a176bd8c008b63596099c1a9965);
+            
+        
+
+        circle_marker_db6f6c179ed5bc7e3bf21c2fb30e19d8.bindPopup(popup_43fe27c977523ac1600412581647af74)
+        ;
+
+        
+    
+    
+            circle_marker_db6f6c179ed5bc7e3bf21c2fb30e19d8.bindTooltip(
+                `<div>
+                     Tips & Toes · Mira Town Centre — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cf7314206e0fd5afcf6bb09d2f4438b0 = L.circleMarker(
+                [25.00949, 55.30579],
+                {"bubblingMouseEvents": true, "color": "#9E2B2B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9E2B2B", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.30052221230218, "stroke": true, "weight": 1.2}
+            ).addTo(feature_group_4c999cb3f32b9ba605789bd38704dc63);
+        
+    
+        var popup_ab8a6bbda4c4dd943dcd03706d50f3e7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_fcc71e7df4c96ecfdd87a336ca463a59 = $(`<div id="html_fcc71e7df4c96ecfdd87a336ca463a59" style="width: 100.0%; height: 100.0%;">         <div style="font-family:system-ui,sans-serif;font-size:13px;width:330px">           <div style="font-weight:600;font-size:15px">The Villa</div>           <div style="color:#666;margin-bottom:6px">Tips & Toes · Dubai</div>           <div style="background:#9E2B2B;color:#fff;display:inline-block;                       padding:2px 9px;border-radius:2px;font-weight:600;                       letter-spacing:.04em;margin-bottom:8px">             SHRINK</div>           <div style="margin:8px 0;line-height:1.45">Shrink or do not renew because health at network percentile 0 (4.3 from 137 reviews); weak market (demand p3, competitive pressure p11).</div>           <table style="border-collapse:collapse;width:100%;font-size:12.5px">             <tr><td style="color:#666">Score</td><td><b>1.0</b></td></tr>             <tr><td style="color:#666">Health (percentile)</td><td>0</td></tr>             <tr><td style="color:#666">Attractiveness (percentile)</td><td>3</td></tr>             <tr><td style="color:#666">Cannibalisation</td><td>0%</td></tr>             <tr><td style="color:#666">Rating</td><td>4.3 (137 reviews)</td></tr>             <tr><td style="color:#666">Stability</td>                 <td style="color:#1C7C54">                   100% · robust</td></tr>                        </table>         </div></div>`)[0];
+                popup_ab8a6bbda4c4dd943dcd03706d50f3e7.setContent(html_fcc71e7df4c96ecfdd87a336ca463a59);
+            
+        
+
+        circle_marker_cf7314206e0fd5afcf6bb09d2f4438b0.bindPopup(popup_ab8a6bbda4c4dd943dcd03706d50f3e7)
+        ;
+
+        
+    
+    
+            circle_marker_cf7314206e0fd5afcf6bb09d2f4438b0.bindTooltip(
+                `<div>
+                     Tips & Toes · The Villa — SHRINK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_4c999cb3f32b9ba605789bd38704dc63.addTo(map_e71e143d99ee4c024473277eb87aaca0);
+        
+    
+            var layer_control_0786ef8071d63448dd706345cb3559f4_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_3f292920df75c38f529d3be57515fb87,
+                },
+                overlays :  {
+                    "PROTECT (18)" : feature_group_9991efd6e5d09be65b1d9b84b6fa0bbe,
+                    "HOLD (18)" : feature_group_7f3710defb45a60ffd24683c9d3d1565,
+                    "SHRINK (17)" : feature_group_4c999cb3f32b9ba605789bd38704dc63,
+                },
+            };
+            let layer_control_0786ef8071d63448dd706345cb3559f4 = L.control.layers(
+                layer_control_0786ef8071d63448dd706345cb3559f4_layers.base_layers,
+                layer_control_0786ef8071d63448dd706345cb3559f4_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_e71e143d99ee4c024473277eb87aaca0);
+
+        
+</script>
+</html>

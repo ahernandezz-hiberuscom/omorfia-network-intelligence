@@ -1,0 +1,75 @@
+shop_id,brand,branch_name,address,emirate,lat,lon,geo_confidence,segment,format,geocode_shift_km,comp_1km,comp_2km,comp_3km,catchment_km2,catchment_source,cannibalisation,cross_segment_overlap,worst_overlap_with,worst_overlap_brand,worst_overlap_km,n_group_shops_2km
+bd_al_ain,Bedashing,Al Ain,"Villa 14, Hamdan Bin Mohammad St., Al Markaniyah, Al Ain",Abu Dhabi,24.2266835,55.6599794,verified,women,salon,5.197,0,0,1,9.26,isochrone_6min,0.0,0.0,,,,0
+bd_al_barsha,Bedashing,Al Barsha,"Shop 1,2-3 Umm Suqeim St, Al Barsha 2",Dubai,25.1131451,55.2156092,verified,women,salon,1.198,0,35,70,7.82,isochrone_6min,0.5713,0.4864,tt_al_barsha,Tips & Toes,1.2,1
+bd_al_dhafra,Bedashing,Al Dhafra,"Al Dhafra Walk, Liwa-Tarif Rd, Zayed City",Abu Dhabi,23.6280524,53.7141144,verified,women,salon,2.836,0,0,1,10.54,isochrone_6min,0.0,0.0,,,,0
+bd_al_falah,Bedashing,Al Falah,"Al Falah Village 4, 1D Branch",Abu Dhabi,24.4428939,54.7396974,verified,women,salon,2.894,0,0,1,8.41,isochrone_6min,0.1219,0.1604,tt_al_falah_1,Tips & Toes,2.89,0
+bd_al_jada,Bedashing,Al Jada,"Shop M-18, Misk 2, Muwaileh Trading",Sharjah,25.3192096,55.4799114,verified,women,salon,0.686,0,0,2,0.91,isochrone_6min,0.0,0.0,,,,0
+bd_al_maqta,Bedashing,Al Maqta,"Opposite Fairmont Bab Al Bahr, Villa 31, Al Khor St",Abu Dhabi,24.4130516,54.4929556,verified,women,salon,1.253,1,2,3,5.29,isochrone_6min,0.0,0.0,,,,0
+bd_al_taif_mall,Bedashing,Al Taif Mall,"G/F 13, Al Taif Mall",Fujairah,25.1202606,56.3253503,verified,women,salon,34.081,2,8,8,11.5,isochrone_6min,0.0,0.0,,,,0
+bd_baniyas,Bedashing,Baniyas,"Villa D, Baniyas East 8, opposite Lulu Hypermarket",Abu Dhabi,24.2973631,54.6332474,verified,women,salon,1.027,1,1,2,7.39,isochrone_6min,0.0,0.0,,,,0
+bd_city_walk,Bedashing,City Walk,"18A-06 Al Raha Street, City Walk",Dubai,25.2019849,55.2638147,verified,women,salon,0.714,1,29,51,7.71,isochrone_6min,0.1615,0.0,tt_the_dubai_mall,Tips & Toes,1.62,2
+bd_delma,Bedashing,Delma,"Shop 1 & 2 Kim Tower, Delma St, Al Nahyan",Abu Dhabi,24.467954,54.3847796,verified,women,salon,0.441,27,97,222,25.19,isochrone_6min,0.2469,0.2145,bd_khaleej_al_arabi,Bedashing,3.3,0
+bd_jumeirah_park,Bedashing,Jumeirah Park,"Shop 17 & 18, Jumeirah Park Club House",Dubai,25.039154,55.1659736,verified,women,salon,1.418,4,8,12,3.72,isochrone_6min,0.0,0.0,,,,2
+bd_khaleej_al_arabi,Bedashing,Khaleej Al Arabi,"Opposite Al Bateen Gardens, Khaleej Al Arabi St",Abu Dhabi,24.4588702,54.3537762,verified,women,salon,1.804,8,82,180,22.08,isochrone_6min,0.5149,0.3204,tt_khaleej_al_arabi,Tips & Toes,1.8,2
+bd_khalifa_city_a,Bedashing,Khalifa City A,"Villa 1, Casablanca Residence, Khalifa City A",Abu Dhabi,24.4399805,54.5989056,verified,women,salon,3.279,3,10,12,14.66,isochrone_6min,0.0143,0.0,bd_zayed_international_airport,Bedashing,4.51,0
+bd_ministries_complex,Bedashing,Ministries Complex,"Shop 3, ICT Building, Khalifa Park",Abu Dhabi,24.432147,54.4647516,verified,women,salon,0.765,2,4,22,3.31,isochrone_6min,0.0,0.0,,,,0
+bd_mirdif_35,Bedashing,Mirdif 35,"Khansaheb Mirdif 35, Level 2, Unit L2-10",Dubai,25.2322986,55.4329599,verified,women,salon,1.525,1,6,8,3.35,isochrone_6min,0.1921,0.9799,tt_city_centre_mirdif,Tips & Toes,3.09,1
+bd_mohammed_bin_zayed_city,Bedashing,Mohammed Bin Zayed City,"Villa 5, 69 Al Raqi St",Abu Dhabi,24.3667831,54.5403404,verified,women,salon,3.888,3,4,9,6.75,isochrone_6min,0.0,0.0,,,,0
+bd_nad_al_sheba,Bedashing,Nad Al Sheba,"Nad Al Sheba Mall, Shop L2-048",Dubai,25.1595625,55.3696875,verified,women,salon,0.048,1,1,6,9.24,isochrone_6min,0.0,0.0,,,,0
+bd_noya_plaza,Bedashing,Noya Plaza,"Noya Plaza, East Yas, G22, Yas Island",Abu Dhabi,24.4995625,54.6254375,verified,women,salon,2.21,0,2,2,1.91,isochrone_6min,0.0295,0.5905,tt_yas_mall,Tips & Toes,2.35,0
+bd_ras_al_khaimah,Bedashing,Ras Al Khaimah,"Villa 3, Sheikh Rashid Bin Saeed Al Maktoum Rd, Al Dhaith",Ras Al Khaimah,25.751541,55.9198717,verified,women,salon,3.094,0,0,1,18.31,isochrone_6min,0.0,0.0,,,,0
+bd_shahama,Bedashing,Shahama,Al Shahama Rd,Abu Dhabi,24.5243742,54.6718965,verified,women,salon,3.232,2,3,6,4.67,isochrone_6min,0.0,0.0,,,,0
+bd_shakhbout_city,Bedashing,Shakhbout City,Shakhbout City 3,Abu Dhabi,24.3481854,54.6238561,verified,women,salon,1.523,0,2,2,20.21,isochrone_6min,0.0,0.0,,,,0
+bd_west_yas,Bedashing,West Yas,"Westyas Plaza, Yas Island",Abu Dhabi,24.4934924,54.5868369,verified,women,salon,0.385,0,0,2,10.28,isochrone_6min,0.1077,0.2191,tt_yas_mall,Tips & Toes,2.27,0
+bd_zawaya_walk,Bedashing,Zawaya Walk,"Shop 32 & 33, Zawaya Walk, University City Rd, Al Shahba",Sharjah,25.3306234,55.4294728,verified,women,salon,2.837,4,6,11,10.08,isochrone_6min,0.0,0.0,,,,0
+bd_zayed_international_airport,Bedashing,Zayed International Airport,Midfield Terminal,Abu Dhabi,24.4527718,54.6411421,verified,women,salon,1.361,1,1,6,4.05,isochrone_6min,0.0517,0.0,bd_khalifa_city_a,Bedashing,4.51,0
+tt_al_barsha,Tips & Toes,Al Barsha,"Umm Suqeim Rd, Al Barsha",Dubai,25.10238,55.21607,medium,women,mid_salon,,1,33,69,6.76,isochrone_6min,0.661,0.627,bd_al_barsha,Bedashing,1.2,2
+tt_al_dhannah_mall,Tips & Toes,Al Dhannah Mall,"Al Dhannah Mall, Al Ruwais",Abu Dhabi,24.0755,52.67199,high,women,mid_salon,,0,0,0,3.04,isochrone_6min,0.0,0.0,,,,0
+tt_al_falah_1,Tips & Toes,Al Falah 1,"Block A Al Manarah St, Al Falah",Abu Dhabi,24.43711,54.71182,medium,women,mid_salon,,0,0,1,6.26,isochrone_6min,0.1637,0.0,bd_al_falah,Bedashing,2.89,2
+tt_al_falah_5,Tips & Toes,Al Falah 5,"Al Falah Drive St, Village Center 5",Abu Dhabi,24.43711,54.71182,low,women,mid_salon,,0,0,1,6.26,isochrone_6min,0.1637,0.0,bd_al_falah,Bedashing,2.89,2
+tt_al_furjan_pavilion,Tips & Toes,Al Furjan Pavilion,"Pavilion, Jebel Ali Village, Al Furjan",Dubai,25.03047,55.15223,medium,women,mid_salon,,2,9,11,9.63,isochrone_6min,0.0,0.0,,,,2
+tt_al_furjan_west,Tips & Toes,Al Furjan West,Al Furjan Pavilion West,Dubai,25.03047,55.15223,low,women,mid_salon,,2,9,11,9.63,isochrone_6min,0.0,0.0,,,,2
+tt_al_hamra_mall,Tips & Toes,Al Hamra Mall,"Sheikh Mohammed Bin Salem Rd, Al Hamra Village",Ras Al Khaimah,25.683,55.78169,high,women,mid_salon,,0,1,1,7.47,isochrone_6min,0.0,0.0,,,,0
+tt_al_shamkhah_villa,Tips & Toes,Al Shamkhah Villa,"367 Sector, Al Ayid St, Al Shamkhah",Abu Dhabi,24.37831,54.70437,medium,women,mid_salon,,0,0,0,8.18,isochrone_6min,0.2153,0.0,tt_shamkha_mall,Tips & Toes,2.08,0
+tt_arabian_ranches,Tips & Toes,Arabian Ranches,"E311, Arabian Ranches",Dubai,25.05357,55.27548,medium,women,mid_salon,,1,1,4,1.82,isochrone_6min,0.0,0.0,,,,0
+tt_arjan,Tips & Toes,Arjan,"Al Faris Building, Arjan, Al Barsha South",Dubai,25.06033,55.23549,medium,women,mid_salon,,9,19,31,2.56,isochrone_6min,0.0,0.0,,,,0
+tt_business_bay,Tips & Toes,Business Bay,"Garden Side Bay Avenue, Business Bay",Dubai,25.19008,55.26719,high,women,mid_salon,,6,13,38,3.77,isochrone_6min,0.2859,0.0,tt_the_dubai_mall,Tips & Toes,1.41,2
+tt_city_centre_mirdif,Tips & Toes,City Centre Mirdif,City Centre Mirdif,Dubai,25.21602,55.40807,high,women,mid_salon,,0,3,14,6.26,isochrone_6min,0.103,0.8528,bd_mirdif_35,Bedashing,3.09,1
+tt_creek_beach,Tips & Toes,Creek Beach,"Retail 10, Summer at Creek Beach Building 1",Dubai,25.19798,55.36038,medium,women,mid_salon,,0,1,4,2.58,isochrone_6min,0.0,0.0,,,,0
+tt_dubai_festival_city,Tips & Toes,Dubai Festival City,GF Dubai Festival City Mall,Dubai,25.22187,55.35259,high,women,mid_salon,,0,1,11,6.12,isochrone_6min,0.0,0.0,,,,0
+tt_dubai_marina_mall,Tips & Toes,Dubai Marina Mall,Dubai Marina Mall Galleria,Dubai,25.07664,55.14022,high,women,mid_salon,,35,62,63,12.26,circle_2km,0.1461,0.0,tt_marina_vista,Tips & Toes,2.24,1
+tt_dubai_silicon_central,Tips & Toes,Dubai Silicon Central,Dubai Silicon Central,Dubai,25.11122,55.37478,high,women,mid_salon,,12,17,18,12.27,circle_2km,0.0,0.0,,,,0
+tt_golden_mile_2,Tips & Toes,Golden Mile 2,"Building 7 Ground Floor, Golden Mile, Palm Jumeirah",Dubai,25.11733,55.1351,low,women,mid_salon,,1,3,7,9.87,isochrone_6min,0.0,0.0,,,,1
+tt_hili_mall,Tips & Toes,Hili Mall,"Baniyas St, Hili",Abu Dhabi,24.27414,55.77883,high,women,mid_salon,,0,3,11,7.29,isochrone_6min,0.0,0.0,,,,1
+tt_jimi_district,Tips & Toes,Jimi District,"Al Mahir St, Al Jimi",Abu Dhabi,24.25096,55.73553,medium,women,mid_salon,,1,3,10,15.29,isochrone_6min,0.0,0.0,,,,0
+tt_khaleej_al_arabi,Tips & Toes,Khaleej Al Arabi,"Villa 816, Al Khaleej Al Arabi St, Al Bateen",Abu Dhabi,24.45138,54.33797,medium,women,mid_salon,,0,17,70,14.03,isochrone_6min,0.8105,0.368,bd_khaleej_al_arabi,Bedashing,1.8,4
+tt_khalifa_city,Tips & Toes,Khalifa City,"Street 12, Southwest 11, Khalifa City A",Abu Dhabi,24.42013,54.57495,medium,women,mid_salon,,0,2,5,8.7,isochrone_6min,0.0,0.0,,,,0
+tt_makani,Tips & Toes,Makani,"Makani Zakher Shopping Center, Nimah",Abu Dhabi,24.13501,55.68543,medium,women,mid_salon,,0,0,0,12.84,isochrone_6min,0.0,0.0,,,,0
+tt_marina_mall_auh,Tips & Toes,Marina Mall AUH,"W Corniche Rd, Al Kasir, Al Marina",Abu Dhabi,24.47604,54.32143,high,women,mid_salon,,0,6,57,16.38,isochrone_6min,0.2366,0.3169,tt_nation_towers,Tips & Toes,1.41,2
+tt_marina_vista,Tips & Toes,Marina Vista,"Unit R01, Marina Vista Tower 2, Emaar Beachfront",Dubai,25.0968,55.13985,medium,women,mid_salon,,0,28,50,2.96,isochrone_6min,0.6054,0.063,tt_dubai_marina_mall,Tips & Toes,2.24,0
+tt_me_aisem_city_centre,Tips & Toes,Me'aisem City Centre,"City Centre Meaisem, Dubai Production City",Dubai,25.04034,55.19694,high,women,mid_salon,,2,7,18,0.98,isochrone_6min,0.0,0.0,,,,0
+tt_meadows_mall,Tips & Toes,Meadows Mall,"Meadows 4, Emirates Hills",Dubai,25.06714,55.15679,medium,women,mid_salon,,0,26,67,2.41,isochrone_6min,0.4274,0.0,tt_dubai_marina_mall,Tips & Toes,1.98,1
+tt_mira_town_centre,Tips & Toes,Mira Town Centre,Mira Town Centre,Dubai,25.00949,55.30579,medium,women,mid_salon,,0,0,0,1.99,isochrone_6min,0.0,0.0,,,,1
+tt_mohammed_bin_zayed_city,Tips & Toes,Mohammed Bin Zayed City,"Villa 143, Mohamed Bin Zayed City Z6",Abu Dhabi,24.33396,54.55356,medium,women,mid_salon,,0,6,29,16.19,isochrone_6min,0.0,0.0,,,,0
+tt_nation_towers,Tips & Toes,Nation Towers,"Nation Towers, 1st Street Al Bateen",Abu Dhabi,24.46446,54.327,high,women,mid_salon,,0,19,77,15.22,isochrone_6min,0.6297,0.5875,bd_khaleej_al_arabi,Bedashing,2.78,4
+tt_park_point,Tips & Toes,Park Point,"Dubai Hills Estate, Park Point",Dubai,25.1214,55.26434,medium,women,mid_salon,,0,0,1,3.8,isochrone_6min,0.0,0.0,,,,0
+tt_port_de_la_mer,Tips & Toes,Port De La Mer,"La Cote B2, Port De La Mer, Jumeirah 1",Dubai,25.23833,55.25279,high,women,mid_salon,,0,5,49,7.81,isochrone_6min,0.0,0.7609,,,,1
+tt_reem_mall,Tips & Toes,Reem Mall,"Spinneys entrance, Basement level 1, Reem Mall",Abu Dhabi,24.48842,54.40058,high,women,mid_salon,,0,39,177,7.67,isochrone_6min,0.337,0.9025,bd_delma,Bedashing,2.78,1
+tt_saadiyat_island,Tips & Toes,Saadiyat Island,Saadiyat Island,Abu Dhabi,24.54597,54.44369,low,women,mid_salon,,1,2,3,1.13,isochrone_6min,0.0,0.0,,,,0
+tt_shamkha_mall,Tips & Toes,Shamkha Mall,"Makani Mall, Al Shamkhah",Abu Dhabi,24.38691,54.7226,high,women,mid_salon,,0,0,0,7.21,isochrone_6min,0.2443,0.0,tt_al_shamkhah_villa,Tips & Toes,2.08,0
+tt_the_dubai_mall,Tips & Toes,The Dubai Mall,"The Dubai Mall Level 1, Fashion Avenue",Dubai,25.19704,55.27895,high,women,mid_salon,,4,20,38,5.24,isochrone_6min,0.2374,0.0,bd_city_walk,Bedashing,1.62,2
+tt_the_greens_souk,Tips & Toes,The Greens Souk,"Community Centre Shop 8, Street 7, The Greens",Dubai,25.09286,55.17062,medium,women,mid_salon,,11,17,48,5.19,isochrone_6min,0.0223,0.0614,tt_the_springs_souk,Tips & Toes,3.68,0
+tt_the_springs_souk,Tips & Toes,The Springs Souk,Springs Souq,Dubai,25.06614,55.19213,high,women,mid_salon,,1,5,23,5.31,isochrone_6min,0.0218,0.1276,tt_the_greens_souk,Tips & Toes,3.68,0
+tt_the_valley,Tips & Toes,The Valley,Emaar Valley Pavilion Mall,Dubai,25.01147,55.44707,medium,women,mid_salon,,0,0,0,12.26,circle_2km,0.0,0.0,,,,0
+tt_the_villa,Tips & Toes,The Villa,"Next to Spinneys, The Villa",Dubai,25.00949,55.30579,low,women,mid_salon,,0,0,0,1.99,isochrone_6min,0.0,0.0,,,,1
+tt_yas_mall,Tips & Toes,Yas Mall,"Yas Mall, Lower ground floor, Yas Island",Abu Dhabi,24.48601,54.60767,high,women,mid_salon,,2,2,3,4.33,isochrone_6min,0.2555,0.9927,bd_west_yas,Bedashing,2.27,1
+jz_palm_jumeirah,Jazz Lounge Spa,Palm Jumeirah,Palm Jumeirah,Dubai,25.11733,55.1351,medium,men,mens_spa,,1,3,7,12.27,circle_2km,0.0,0.0152,,,,1
+jz_port_de_la_mer,Jazz Lounge Spa,Port De La Mer,Port De La Mer,Dubai,25.23833,55.25279,high,men,mens_spa,,0,5,49,12.28,circle_2km,0.0,0.4839,,,,1
+jz_al_barsha,Jazz Lounge Spa,Al Barsha,Al Barsha,Dubai,25.09949,55.20173,medium,men,mens_spa,,2,66,81,12.27,circle_2km,0.0,0.3454,,,,1
+jz_mirdif,Jazz Lounge Spa,Mirdif,Mirdif,Dubai,25.22184,55.42315,medium,men,mens_spa,,1,3,9,12.28,circle_2km,0.0,0.4346,,,,2
+jz_yas_mall,Jazz Lounge Spa,Yas Mall,"Yas Mall, Yas Island",Abu Dhabi,24.48601,54.60767,high,men,mens_spa,,2,2,3,12.21,circle_2km,0.0,0.3524,,,,1
+jz_nation_towers,Jazz Lounge Spa,Nation Towers,Nation Towers,Abu Dhabi,24.46446,54.327,high,men,mens_spa,,0,19,77,12.2,circle_2km,0.4337,0.7328,jz_al_bateen,Jazz Lounge Spa,1.83,4
+jz_al_falah,Jazz Lounge Spa,Al Falah,Al Falah,Abu Dhabi,24.43711,54.71182,medium,men,mens_spa,,0,0,1,12.2,circle_2km,0.0,0.1105,,,,2
+jz_al_reem_mall,Jazz Lounge Spa,Al Reem Mall,Reem Mall,Abu Dhabi,24.48842,54.40058,high,men,mens_spa,,0,39,177,12.21,circle_2km,0.0,0.5675,,,,1
+jz_hili,Jazz Lounge Spa,Hili,"Four Points by Sheraton, Hili, Al Ain",Abu Dhabi,24.27414,55.77883,low,men,mens_spa,,0,3,11,12.18,circle_2km,0.0,0.0,,,,1
+jz_al_bateen,Jazz Lounge Spa,Al Bateen,Al Bateen,Abu Dhabi,24.45138,54.33797,medium,men,mens_spa,,0,17,70,12.2,circle_2km,0.4338,0.5798,jz_nation_towers,Jazz Lounge Spa,1.83,4
