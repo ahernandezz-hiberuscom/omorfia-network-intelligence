@@ -14,10 +14,11 @@ isochrones), and residential / industrial landuse polygons within 2 km.
   WATCH   high demand but half covered, saturated, or not residential
   SKIP    low demand, or fully covered
 
-The residential test exists because without it the top GROW zones were
-Musaffah, Khalid Port, Al Quoz Industrial and Dubai International Airport:
-places thick with OSM points and thin on people who live there. The flaw was
-invisible while the output was grid ids and obvious once the cells were named.
+The residential test exists because without it the top GROW zones included
+Musaffah, the Sharjah and Al Qusais industrial areas and Dubai International
+Airport: places thick with OSM points and thin on people who live there. The
+flaw was invisible while the output was grid ids and obvious once the cells
+were named. 21 zones fail this test and drop to WATCH.
 
 Scope: the Abu Dhabi and Dubai metropolitan areas, 192 cells with at least 15
 POIs. OSM extraction 2026-09-07.

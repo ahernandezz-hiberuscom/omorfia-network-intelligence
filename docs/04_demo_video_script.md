@@ -138,7 +138,7 @@ markers on the map.
 > seven competitors, nearest site of ours five kilometres away.
 >
 > And a confession that belongs here. The first version of this layer recommended
-> Musaffah, Khalid Port and Dubai International Airport. Places thick with map
+> Musaffah, the Sharjah Industrial Area and Dubai International Airport. Places thick with map
 > points and with nobody living in them. I only caught it when I replaced the grid
 > ids with real neighbourhood names — 'cell 18_25' looks like a recommendation,
 > 'Musaffah Industrial Area' looks like a mistake. So a zone now has to prove it

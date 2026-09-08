@@ -235,10 +235,10 @@ commercial activity that no group site reaches within a 6-minute drive**.
 
 #### The residential test, and why it exists
 
-The first version of this layer had no such test, and its top GROW zones came
-out as **Musaffah, Khalid Port, Al Quoz Industrial and Dubai International
-Airport**. That is not a list of places to open a salon; it is a list of places
-with a lot of OpenStreetMap points.
+The first version of this layer had no such test, and its GROW list included
+**Musaffah, the Sharjah Industrial Area, Al Qusais Industrial Area and Dubai
+International Airport**. That is not a list of places to open a salon; it is a
+list of places with a lot of OpenStreetMap points.
 
 The flaw was invisible while the output was grid ids. "Cell 18_25" reads as a
 plausible recommendation; "Musaffah Industrial Area" does not. **Naming the

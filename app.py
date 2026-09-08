@@ -330,11 +330,11 @@ with tabs[3]:
     if rej:
         with st.expander(f"Zones rejected for having no residential catchment ({len(rej)})"):
             st.caption("A salon serves residents, not warehouses. Without this "
-                       "test the top recommendations were Musaffah, Khalid Port "
-                       "and Dubai International Airport — places with a lot of "
-                       "OSM points and nobody living in them. The flaw only "
-                       "became visible once the cells were given their real "
-                       "names instead of grid ids.")
+                       "test the recommendations included Musaffah, the Sharjah "
+                       "and Al Qusais industrial areas and Dubai International "
+                       "Airport — places with a lot of OSM points and nobody "
+                       "living in them. The flaw only became visible once the "
+                       "cells were given their real names instead of grid ids.")
             rej.sort(key=lambda c: -int(c["demand"]))
             st.dataframe([{
                 "Zone": c["zone_name"] or c["cell_id"], "Retail POIs": int(c["demand"]),
