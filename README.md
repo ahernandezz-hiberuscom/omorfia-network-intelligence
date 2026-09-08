@@ -159,13 +159,14 @@ python src/scoring.py                 # decisions + stability -> data/master.csv
 python src/opportunity.py             # GROW/WATCH/SKIP       -> data/opportunity_cells.csv
 python src/build_map.py               # exploratory map       -> out/network_map.html
 python src/build_decision_outputs.py  # decision map + chart  -> out/
-python tests/test_pipeline.py         # 51 checks
+python tests/test_pipeline.py         # 50 checks
 ```
 
-Only `src/fetch_competitors.py` needs the network (Overpass API), and its output
-is committed. `tests/test_pipeline.py` is not a happy-path suite: each check
-asserts an invariant a silent failure would break, or feeds a component
-something hostile.
+Only `src/fetch_competitors.py` needs the network (Overpass API), and you never
+have to run it: the extraction it produced is committed, embedded in
+`src/competitor_points.py` and `data/demand_density.csv`.
+`tests/test_pipeline.py` is not a happy-path suite: each check asserts an
+invariant a silent failure would break, or feeds a component something hostile.
 
 ## Layout
 

@@ -1,16 +1,21 @@
 """
-Extracts external competition (salons, hairdressers, spas, massage centres)
-from OpenStreetMap via the Overpass API, and computes the competitive density
-around each group branch.
-
-Runs once; its output is committed under data/ so the project can be reviewed
-with no network access.
+First-pass extraction of external competition (salons, hairdressers, spas,
+massage centres) from OpenStreetMap via the Overpass API.
 
     python src/fetch_competitors.py
 
-On reproducibility: OpenStreetMap changes daily. The extraction used in this
-analysis is from 2026-09-03 and returned 2,543 POIs across the UAE, of which
-1,129 fall within 3 km of a group branch.
+SUPERSEDED, kept for provenance. This pass queried `node` only, so it missed
+the 61 competitors mapped as building polygons, and it measured per-branch
+densities against the pre-verification geocodes. It returned 2,543 POIs across
+the UAE, 1,129 of them within 3 km of a group branch.
+
+The extraction actually used by the model is the `nwr` re-run of 2026-09-07,
+committed inline in src/competitor_points.py (2,606 POIs, 872 within 3 km) with
+the per-branch counts in the COMP table of src/build_features.py. Nothing in
+the pipeline reads the two CSVs this script writes, so you never need to run it.
+
+On reproducibility: OpenStreetMap changes daily, so a re-run will not reproduce
+either set of numbers exactly.
 """
 import csv, json, math, pathlib, urllib.parse, urllib.request
 
@@ -67,7 +72,7 @@ def main():
     for s in shops:
         s["lat"], s["lon"] = float(s["lat"]), float(s["lon"])
 
-    print("Consultando Overpass API…")
+    print("Querying the Overpass API...")
     data = fetch()
     pois = [e for e in data["elements"] if e.get("lat") and e.get("lon")]
     print(f"  {len(pois)} competitor POIs across the UAE")
@@ -103,7 +108,7 @@ def main():
         for sid, c in counts.items():
             w.writerow([sid] + c)
 
-    print(f"competitors_osm.csv     -> {len(rows)} competidores a <= 3 km del grupo")
+    print(f"competitors_osm.csv     -> {len(rows)} competitors within 3 km of the group")
     print(f"competitor_density.csv  -> {len(counts)} rows")
 
 
